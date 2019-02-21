@@ -1,0 +1,34 @@
+.header-container {
+    align-items: center;
+    background-color: #bd6055;
+    display: flex;
+    justify-content: space-between;
+    
+    .title {
+        font-family: $title-font;
+        font-size: 55px;
+    };
+    
+    .fas {
+        font-size: 25px;
+        margin: 0 15px;
+    };
+
+    .fa-heart {
+        margin-right: 25px;
+    }
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+
+    .search-input {
+        height: 25px;
+        margin-left: 25px;
+    };
+
+    .fa-search {
+        font-size: 24px;
+    };
+}
