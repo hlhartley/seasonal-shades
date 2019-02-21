@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import '../../../src/main.scss';
+import { Header } from '../../Components/Header/Header';
+import { Navigation } from '../../Components/Navigation/Navigation';
+import { Banner } from '../../Components/Banner/Banner';
 
 class App extends Component {
   constructor() {
@@ -42,6 +45,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <Header />
+          <Navigation />
+          <Banner />
           App
         </header>
       </div>
