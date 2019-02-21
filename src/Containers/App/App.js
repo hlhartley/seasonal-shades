@@ -16,12 +16,17 @@ class App extends Component {
       lipstickColors: {},
       blushColors: {},
       nail_polishColors: {},
-      inputValue: ''
+      inputValue: '',
     };
   };
 
-  componentDidMount() {
-    this.fetchMakeup('eyeshadow');
+  async componentDidMount() {
+    await this.fetchMakeup('blush');
+    await this.fetchMakeup('lipstick');
+    await this.fetchMakeup('eyeshadow');
+    await this.fetchMakeup('nail_polish');
+
+    debugger
 
   };
 
@@ -34,11 +39,11 @@ class App extends Component {
 
     result.forEach((item) => {
       item.product_colors.forEach(color => {
-        colors[color.hex_value] = item.id;
-        // if (!colors[color.hex_value]) {
-        //   colors[color.hex_value] = [];
-        // } 
-        // colors[color.hex_value].push(item.id);
+        // colors[color.hex_value] = item.id;
+        if (!colors[color.hex_value]) {
+          colors[color.hex_value] = [];
+        } 
+        colors[color.hex_value].push(item.id);
       })
       items[item.id] = item;
     })
@@ -54,9 +59,12 @@ class App extends Component {
   hexCodeInput = (e) => {
     e.preventDefault();
     const hexCode = this.state.inputValue;
-    const productID = this.state.eyeshadowColors[hexCode];
-    const product = this.state.eyeshadow
-    console.log(product[productID])
+
+    const productIDs = this.state.nail_polishColors[hexCode];
+    productIDs.forEach(productID => {
+      const product = this.state.nail_polish[productID];
+      console.log(product)
+    })
   }
 
   render() {
