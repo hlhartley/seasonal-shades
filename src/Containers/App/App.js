@@ -9,11 +9,15 @@ class App extends Component {
       lipstick: [],
       blush: [],
       nail_polish: [],
+      eyeshadowColors: [],
+      lipstickColors: [],
+      blushColors: [],
+      nail_polishColors: [],
     };
   };
 
   componentDidMount() {
-    this.fetchMakeup('blush');
+    this.fetchMakeup('eyeshadow');
 
   };
 
@@ -21,10 +25,17 @@ class App extends Component {
     const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${path}`;
     const response = await fetch(url);
     const result = await response.json();
+    const colors = []
+    result.map((item) => {
+      item.product_colors.map((color) => {
+        colors.push(color)
+      });
+    });
     const items = result.map((item) => {
       return item
     });
     this.setState({ [`${path}`]: items })
+    this.setState({ [`${path}Colors`]: colors })
   };
 
   render() {
