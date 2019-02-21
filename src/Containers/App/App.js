@@ -3,6 +3,8 @@ import '../../../src/main.scss';
 import { Header } from '../../Components/Header/Header';
 import { Navigation } from '../../Components/Navigation/Navigation';
 import { Banner } from '../../Components/Banner/Banner';
+import { setError } from '../../Actions';
+import { connect } from 'react-redux';
 
 class App extends Component {
   constructor() {
@@ -25,31 +27,32 @@ class App extends Component {
     await this.fetchMakeup('lipstick');
     await this.fetchMakeup('eyeshadow');
     await this.fetchMakeup('nail_polish');
-
     debugger
-
   };
 
   fetchMakeup = async (path) => {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${path}`;
-    const response = await fetch(url);
-    const result = await response.json();
-    const colors = {};
-    const items = {};
-
-    result.forEach((item) => {
-      item.product_colors.forEach(color => {
-        // colors[color.hex_value] = item.id;
-        if (!colors[color.hex_value]) {
-          colors[color.hex_value] = [];
-        } 
-        colors[color.hex_value].push(item.id);
-      })
-      items[item.id] = item;
-    })
-
-    this.setState({ [`${path}`]: items })
-    this.setState({ [`${path}Colors`]: colors })
+    try {
+      const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${path}`;
+      const response = await fetch(url);
+      const result = await response.json();
+      const colors = {};
+      const items = {};
+  
+      result.forEach((item) => {
+        item.product_colors.forEach(color => {
+          // colors[color.hex_value] = item.id;
+          if (!colors[color.hex_value]) {
+            colors[color.hex_value] = [];
+          } 
+          colors[color.hex_value].push(item.id);
+        })
+        items[item.id] = item;
+      });
+      this.setState({ [`${path}`]: items })
+      this.setState({ [`${path}Colors`]: colors })
+    } catch(error) {
+      this.props.setError(error)
+    }
   };
 
   handleChange = (e) => {
@@ -76,7 +79,6 @@ class App extends Component {
           <Banner />
           App
         </header>
-
         <p>Enter a hex code:</p>
         <form onSubmit={this.hexCodeInput}>
           <input type="text" onChange={this.handleChange}></input>
@@ -87,4 +89,8 @@ class App extends Component {
   };
 };
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  setError: (error) => dispatch(setError(error))  
+});
+
+export default connect(null, mapDispatchToProps)(App);
