@@ -8,14 +8,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      eyeshadow: [],
-      lipstick: [],
-      blush: [],
-      nail_polish: [],
-      eyeshadowColors: [],
-      lipstickColors: [],
-      blushColors: [],
-      nail_polishColors: [],
+      eyeshadow: {},
+      lipstick: {},
+      blush: {},
+      nail_polish: {},
+      eyeshadowColors: {},
+      lipstickColors: {},
+      blushColors: {},
+      nail_polishColors: {},
+      inputValue: ''
     };
   };
 
@@ -28,18 +29,35 @@ class App extends Component {
     const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${path}`;
     const response = await fetch(url);
     const result = await response.json();
-    const colors = []
-    result.map(item => {
-      return item.product_colors.map(color => {
-        return colors.push(color)
-      });
-    });
-    const items = result.map((item) => {
-      return item
-    });
+    const colors = {};
+    const items = {};
+
+    result.forEach((item) => {
+      item.product_colors.forEach(color => {
+        colors[color.hex_value] = item.id;
+        // if (!colors[color.hex_value]) {
+        //   colors[color.hex_value] = [];
+        // } 
+        // colors[color.hex_value].push(item.id);
+      })
+      items[item.id] = item;
+    })
+
     this.setState({ [`${path}`]: items })
     this.setState({ [`${path}Colors`]: colors })
   };
+
+  handleChange = (e) => {
+    this.setState({ inputValue: e.target.value })
+  }
+
+  hexCodeInput = (e) => {
+    e.preventDefault();
+    const hexCode = this.state.inputValue;
+    const productID = this.state.eyeshadowColors[hexCode];
+    const product = this.state.eyeshadow
+    console.log(product[productID])
+  }
 
   render() {
     return (
@@ -50,6 +68,12 @@ class App extends Component {
           <Banner />
           App
         </header>
+
+        <p>Enter a hex code:</p>
+        <form onSubmit={this.hexCodeInput}>
+          <input type="text" onChange={this.handleChange}></input>
+          <input type="submit" value="Submit"></input>
+        </form>
       </div>
     )
   };
