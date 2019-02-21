@@ -7,6 +7,7 @@
         font-family: $title-font;
         font-size: 55px;
         letter-spacing: 3.5px;
+        margin-left: 25px;
     };
     
     .fas {
@@ -19,16 +20,16 @@
     };
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
+// .search-container {
+//     display: flex;
+//     align-items: center;
 
-    .search-input {
-        height: 25px;
-        margin-left: 25px;
-    };
+//     .search-input {
+//         height: 25px;
+//         margin-left: 25px;
+//     };
 
-    .fa-search {
-        font-size: 24px;
-    };
-}
+//     .fa-search {
+//         font-size: 24px;
+//     };
+// }
