@@ -13,14 +13,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      eyeshadow: {},
-      lipstick: {},
-      blush: {},
-      nail_polish: {},
-      eyeshadowColors: {},
-      lipstickColors: {},
-      blushColors: {},
-      nail_polishColors: {},
       inputValue: '',
     };
   };
@@ -28,8 +20,8 @@ class App extends Component {
   async componentDidMount() {
     await this.props.fetchMakeup('lipstick');
     await this.props.fetchMakeup('blush');
-    // await this.fetchMakeup('eyeshadow');
-    // await this.fetchMakeup('nail_polish');
+    await this.props.fetchMakeup('eyeshadow');
+    await this.props.fetchMakeup('nail_polish');
     debugger
   };
 

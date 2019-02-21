@@ -1,4 +1,4 @@
-import { getLipstick, getLipstickColors, getBlush, getBlushColors, setLoading, setError } from '../Actions/index';
+import { getLipstick, getLipstickColors, getBlush, getBlushColors, getEyeshadow, getEyeshadowColors, getNailpolish, getNailpolishColors, setLoading, setError } from '../Actions/index';
 import { API } from '../Helpers/requests';
 
 export const fetchMakeup = (path) => {
@@ -24,7 +24,13 @@ export const fetchMakeup = (path) => {
                     dispatch(getLipstickColors(colors));
                 case 'blush':
                     dispatch(getBlush(items));
-                    dispatch(getBlushColors(colors))
+                    dispatch(getBlushColors(colors));
+                case 'eyeshadow':
+                    dispatch(getEyeshadow(items));
+                    dispatch(getEyeshadowColors(colors));
+                case 'nail_polish':
+                    dispatch(getNailpolish(items));
+                    dispatch(getNailpolishColors(colors));
             }
         } catch (error) {
             dispatch(setError(error));
