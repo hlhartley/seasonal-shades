@@ -2,6 +2,11 @@ import React from 'react';
 
 export const Navigation = () => {
     return (
-        <p>Navigation</p>
+        <div className='navigation-container'>
+            <button>EYES</button>
+            <button>LIPS</button>
+            <button>CHEEKS</button>
+            <button>NAILS</button>
+        </div>
     )
 };
