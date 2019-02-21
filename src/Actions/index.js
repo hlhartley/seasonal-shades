@@ -16,7 +16,27 @@ export const getBlush = (blush) => ({
 export const getBlushColors = (colors) => ({
     type: 'GET_BLUSH_COLORS',
     colors,
-})
+});
+
+export const getEyeshadow = (eyeshadow) => ({
+    type: 'GET_EYESHADOW',
+    eyeshadow,
+});
+
+export const getEyeshadowColors = (colors) => ({
+    type: 'GET_EYESHADOW_COLORS',
+    colors,
+});
+
+export const getNailpolish = (nail_polish) => ({
+    type: 'GET_NAILPOLISH',
+    nail_polish,
+});
+
+export const getNailpolishColors = (colors) => ({
+    type: 'GET_NAILPOLISH_COLORS',
+    colors,
+});
 
 export const setLoading = (bool) => ({
     type: 'SET_LOADING',
