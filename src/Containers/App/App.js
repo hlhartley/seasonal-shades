@@ -32,10 +32,10 @@ class App extends Component {
   hexCodeInput = (e) => {
     e.preventDefault();
     const hexCode = this.state.inputValue;
-
-    const productIDs = this.state.nail_polishColors[hexCode];
+    console.log(this.props.nailpolishColors)
+    const productIDs = this.props.nailpolishColors[hexCode];
     productIDs.forEach(productID => {
-      const product = this.state.nail_polish[productID];
+      const product = this.props.nailpolish[productID];
       console.log(product)
     })
   }
@@ -59,9 +59,14 @@ class App extends Component {
   };
 };
 
+const mapStateToProps = (state) => ({
+  nailpolish: state.nailpolish,
+  nailpolishColors: state.nailpolishColors,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   setError: (error) => dispatch(setError(error)) ,
   fetchMakeup: (path) => dispatch(fetchMakeup(path)),
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
