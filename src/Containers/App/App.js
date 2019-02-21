@@ -7,7 +7,7 @@ import { setError } from '../../Actions';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { Favorites } from '../../Containers/Favorites/Favorites';
-import { API } from '../../Helpers/requests';
+import { fetchMakeup } from '../../Thunks/fetchMakeup';
 
 class App extends Component {
   constructor() {
@@ -26,30 +26,11 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    await this.fetchMakeup('blush');
-    await this.fetchMakeup('lipstick');
-    await this.fetchMakeup('eyeshadow');
-    await this.fetchMakeup('nail_polish');
+    await this.props.fetchMakeup('lipstick');
+    // await this.fetchMakeup('lipstick');
+    // await this.fetchMakeup('eyeshadow');
+    // await this.fetchMakeup('nail_polish');
     debugger
-  };
-
-  fetchMakeup = async (path) => {
-    const colors = {};
-    const items = {};
-    
-    let result = await API(path)
-    result.forEach((item) => {
-        item.product_colors.forEach(color => {
-          // colors[color.hex_value] = item.id;
-          if (!colors[color.hex_value]) {
-            colors[color.hex_value] = [];
-          } 
-          colors[color.hex_value].push(item.id);
-        })
-        items[item.id] = item;
-      });
-      this.setState({ [`${path}`]: items })
-      this.setState({ [`${path}Colors`]: colors })
   };
 
   handleChange = (e) => {
@@ -87,7 +68,8 @@ class App extends Component {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  setError: (error) => dispatch(setError(error))  
+  setError: (error) => dispatch(setError(error)) ,
+  fetchMakeup: (path) => dispatch(fetchMakeup(path)),
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(App));
