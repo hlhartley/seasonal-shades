@@ -3,7 +3,11 @@
     display: flex;
     background-color: #efdac0;
 
-    .banner-img{
+    .banner-img {
         width: 75vw;
-    }
-}
+    };
+
+    .banner-text {
+        text-align: center;
+    };
+};

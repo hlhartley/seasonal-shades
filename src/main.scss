@@ -3,3 +3,8 @@
 @import './Components/Header/Header.scss';
 @import './Components/Navigation/Navigation.scss';
 @import './Components/Banner/Banner.scss';
+
+* {
+    font-family: $main-font;
+    font-size: 16px;
+}

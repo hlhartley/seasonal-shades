@@ -3,9 +3,11 @@
     display: flex;
     justify-content: space-around;
     padding-bottom: 15px;
-
+    
     button{
         border: none;
-        font-size: 15px;
+        font-family: $nav-font;
+        font-size: 17px;
+        letter-spacing: 1.75px;
     };
 };
