@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../../src/main.scss';
 import { Header } from '../../Components/Header/Header';
-import { Navigation } from '../../Components/Navigation/Navigation';
+import { Navigation } from '../../Containers/Navigation/Navigation';
 import { Banner } from '../../Components/Banner/Banner';
 import { setError } from '../../Actions';
 import { connect } from 'react-redux';
@@ -15,14 +15,6 @@ class App extends Component {
     this.state = {
       inputValue: '',
     };
-  };
-
-  async componentDidMount() {
-    await this.props.fetchMakeup('lipstick');
-    await this.props.fetchMakeup('blush');
-    await this.props.fetchMakeup('eyeshadow');
-    await this.props.fetchMakeup('nail_polish');
-    debugger
   };
 
   handleChange = (e) => {
@@ -45,7 +37,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Header />
-          <Navigation />
+          <Navigation fetchMakeup={this.props.fetchMakeup}/>
           <Banner />
           <Route exact path='/favorites' render={()=> <Favorites />}/>
         </header>
@@ -65,7 +57,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setError: (error) => dispatch(setError(error)) ,
+  setError: (error) => dispatch(setError(error)),
   fetchMakeup: (path) => dispatch(fetchMakeup(path)),
 });
 
