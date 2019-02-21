@@ -7,6 +7,7 @@ import { setError } from '../../Actions';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { Favorites } from '../../Containers/Favorites/Favorites';
+import { API } from '../../Helpers/requests';
 
 class App extends Component {
   constructor() {
@@ -33,14 +34,11 @@ class App extends Component {
   };
 
   fetchMakeup = async (path) => {
-    try {
-      const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${path}`;
-      const response = await fetch(url);
-      const result = await response.json();
-      const colors = {};
-      const items = {};
-  
-      result.forEach((item) => {
+    const colors = {};
+    const items = {};
+    
+    let result = await API(path)
+    result.forEach((item) => {
         item.product_colors.forEach(color => {
           // colors[color.hex_value] = item.id;
           if (!colors[color.hex_value]) {
@@ -52,9 +50,6 @@ class App extends Component {
       });
       this.setState({ [`${path}`]: items })
       this.setState({ [`${path}Colors`]: colors })
-    } catch(error) {
-      this.props.setError(error)
-    }
   };
 
   handleChange = (e) => {
