@@ -80,7 +80,6 @@ class App extends Component {
           <Navigation />
           <Banner />
           <Route exact path='/favorites' render={()=> <Favorites />}/>
-          App
         </header>
         <p>Enter a hex code:</p>
         <form onSubmit={this.hexCodeInput}>
