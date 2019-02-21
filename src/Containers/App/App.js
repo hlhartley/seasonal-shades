@@ -26,9 +26,9 @@ class App extends Component {
     const response = await fetch(url);
     const result = await response.json();
     const colors = []
-    result.map((item) => {
-      item.product_colors.map((color) => {
-        colors.push(color)
+    result.map(item => {
+      return item.product_colors.map(color => {
+        return colors.push(color)
       });
     });
     const items = result.map((item) => {
