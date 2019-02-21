@@ -5,6 +5,8 @@ import { Navigation } from '../../Components/Navigation/Navigation';
 import { Banner } from '../../Components/Banner/Banner';
 import { setError } from '../../Actions';
 import { connect } from 'react-redux';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { Favorites } from '../../Containers/Favorites/Favorites';
 
 class App extends Component {
   constructor() {
@@ -77,6 +79,7 @@ class App extends Component {
           <Header />
           <Navigation />
           <Banner />
+          <Route exact path='/favorites' render={()=> <Favorites />}/>
           App
         </header>
         <p>Enter a hex code:</p>
@@ -93,4 +96,4 @@ const mapDispatchToProps = (dispatch) => ({
   setError: (error) => dispatch(setError(error))  
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
