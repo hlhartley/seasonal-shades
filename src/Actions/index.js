@@ -8,6 +8,16 @@ export const getLipstickColors = (colors) => ({
     colors,
 });
 
+export const getBlush = (blush) => ({
+    type: 'GET_BLUSH',
+    blush,
+});
+
+export const getBlushColors = (colors) => ({
+    type: 'GET_BLUSH_COLORS',
+    colors,
+})
+
 export const setLoading = (bool) => ({
     type: 'SET_LOADING',
     bool,

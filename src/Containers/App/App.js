@@ -27,7 +27,7 @@ class App extends Component {
 
   async componentDidMount() {
     await this.props.fetchMakeup('lipstick');
-    // await this.fetchMakeup('lipstick');
+    await this.props.fetchMakeup('blush');
     // await this.fetchMakeup('eyeshadow');
     // await this.fetchMakeup('nail_polish');
     debugger
