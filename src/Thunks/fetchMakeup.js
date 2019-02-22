@@ -1,5 +1,43 @@
-import { getLipstick, getLipstickColors, getBlush, getBlushColors, getEyeshadow, getEyeshadowColors, getNailpolish, getNailpolishColors, setLoading, setError } from '../Actions/index';
+import { getAllColors, getLipstick, getLipstickColors, getBlush, getBlushColors, getEyeshadow, getEyeshadowColors, getNailpolish, getNailpolishColors, setLoading, setError } from '../Actions/index';
 import { API } from '../Helpers/requests';
+
+export const fetchAllColors = () => {
+    return async (dispatch) => {
+        try {
+            dispatch(setLoading(true));
+            const allColors = {};
+            const lipstick = await API('lipstick')
+                lipstick.forEach((lipstick) => {
+                    lipstick.product_colors.forEach(color => {
+                        allColors[color.hex_value] = color.colour_name;
+                    });
+                });
+            const blush = await API('blush')
+            blush.forEach((blush) => {
+                blush.product_colors.forEach(color => {
+                    allColors[color.hex_value] = color.colour_name;
+                });
+            });
+            const eyeshadow = await API('eyeshadow')
+            eyeshadow.forEach((eyeshadow) => {
+                eyeshadow.product_colors.forEach(color => {
+                    allColors[color.hex_value] = color.colour_name;
+                });
+            });
+            const nailpolish = await API('nail_polish')
+            nailpolish.forEach((nailpolish) => {
+                nailpolish.product_colors.forEach(color => {
+                    allColors[color.hex_value] = color.colour_name;
+                });
+            });
+            dispatch(getAllColors(allColors))
+        } catch (error) {
+            dispatch(setError(error));
+        }
+        dispatch(setLoading(false));
+        }
+    }
+
 
 export const fetchMakeup = (path) => {
     return async (dispatch) => {

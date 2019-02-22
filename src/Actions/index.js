@@ -1,3 +1,8 @@
+export const getAllColors = (colors) => ({
+    type: 'GET_ALL_COLORS',
+    colors,
+})
+
 export const getLipstick = (lipstick) => ({
     type: 'GET_LIPSTICK',
     lipstick,

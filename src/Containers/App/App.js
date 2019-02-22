@@ -4,10 +4,11 @@ import { Header } from '../../Components/Header/Header';
 import Navigation from '../Navigation/Navigation';
 import { Banner } from '../../Components/Banner/Banner';
 import ColorList from '../ColorList/ColorList';
-import { setError } from '../../Actions';
+import { setError, getAllColors } from '../../Actions';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { Favorites } from '../../Containers/Favorites/Favorites';
+import { fetchAllColors } from '../../Thunks/fetchMakeup';
 
 class App extends Component {
   constructor() {
@@ -16,6 +17,10 @@ class App extends Component {
       inputValue: '',
     };
   };
+
+  componentDidMount = () => {
+    this.props.fetchAllColors()
+  }
 
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value })
@@ -55,10 +60,12 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   nailpolish: state.nailpolish,
   nailpolishColors: state.nailpolishColors,
+  allColors: state.allColors,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setError: (error) => dispatch(setError(error)),
+  fetchAllColors: () => dispatch(fetchAllColors())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

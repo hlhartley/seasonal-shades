@@ -3,30 +3,28 @@ import { connect } from 'react-redux';
 
 export class ColorList extends Component {
     render() {
-        if (Object.keys(this.props.nail_polish).length > 1) {
+        if (Object.keys(this.props.nail_polishColors).length > 1) {
             return(
                 <div className='color-container'>
-                    {Object.values(this.props.nail_polish).map((nail_polish) => {
-                        return nail_polish.product_colors.map((color) => {
-                            return <div className='color' style={{ backgroundColor: color.hex_value}}>{color.colour_name}</div>
-                        })
+                    {Object.keys(this.props.nail_polishColors).map((hexcode) => {
+                            return <div className='color' style={{ backgroundColor: hexcode}}>{this.props.allColors[hexcode]}</div>
                     })
                 }
-                </div>
-            )
+                </div>)
         } else {
             return(
-                <p>hi</p>
+                <p>colorList</p>
             )
         }
     }
 }
 
 export const mapStateToProps = (state) => ({
-    lipstick: state.lipstick,
-    blush: state.blush,
-    eyeshadow: state.eyeshadow,
-    nail_polish: state.nailpolish,
+    allColors: state.allColors,
+    lipstickColors: state.lipstickColors,
+    blushColors: state.blushColors,
+    eyeshadowColors: state.eyeshadowColors,
+    nail_polishColors: state.nailpolishColors,
 })
 
 export default connect(mapStateToProps)(ColorList);
@@ -65,3 +63,23 @@ export default connect(mapStateToProps)(ColorList);
 // })
 
 // export default connect(mapStateToProps)(ColorList);
+
+
+
+
+// if (Object.keys(this.props.nail_polish).length > 1) {
+//     return(
+//         <div className='color-container'>
+//             {Object.values(this.props.nail_polish).map((nail_polish) => {
+//                 return nail_polish.product_colors.map((color) => {
+//                     return <div className='color' style={{ backgroundColor: color.hex_value}}>{color.colour_name}</div>
+//                 })
+//             })
+//         }
+//         </div>
+//     )
+// } else {
+//     return(
+//         <p>hi</p>
+//     )
+// }
