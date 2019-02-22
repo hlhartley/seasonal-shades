@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import '../../../src/main.scss';
 import { Header } from '../../Components/Header/Header';
-import { Navigation } from '../../Containers/Navigation/Navigation';
+import Navigation from '../Navigation/Navigation';
 import { Banner } from '../../Components/Banner/Banner';
+import ColorList from '../ColorList/ColorList';
 import { setError } from '../../Actions';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { Favorites } from '../../Containers/Favorites/Favorites';
-import { fetchMakeup } from '../../Thunks/fetchMakeup';
 
 class App extends Component {
   constructor() {
@@ -24,11 +24,11 @@ class App extends Component {
   hexCodeInput = (e) => {
     e.preventDefault();
     const hexCode = this.state.inputValue;
-    console.log(this.props.nailpolishColors)
+    // console.log(this.props.nailpolishColors)
     const productIDs = this.props.nailpolishColors[hexCode];
     productIDs.forEach(productID => {
       const product = this.props.nailpolish[productID];
-      console.log(product)
+      // console.log(product)
     })
   }
 
@@ -37,8 +37,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Header />
-          <Navigation fetchMakeup={this.props.fetchMakeup}/>
+          <Navigation />
           <Banner />
+          <ColorList />
           <Route exact path='/favorites' render={()=> <Favorites />}/>
         </header>
         <p>Enter a hex code:</p>
@@ -58,7 +59,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setError: (error) => dispatch(setError(error)),
-  fetchMakeup: (path) => dispatch(fetchMakeup(path)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
