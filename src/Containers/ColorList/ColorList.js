@@ -7,7 +7,7 @@ export class ColorList extends Component {
             return(
                 <div className='color-container'>
                     {Object.keys(this.props.nail_polishColors).map((hexcode) => {
-                            return <div className='color' style={{ backgroundColor: hexcode}}>{this.props.allColors[hexcode]}</div>
+                            return <div className='color' style={{ backgroundColor: hexcode}}><i class="far fa-heart"></i><p>{this.props.allColors[hexcode]}</p></div>
                     })
                 }
                 </div>)
