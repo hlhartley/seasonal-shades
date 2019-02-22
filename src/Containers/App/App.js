@@ -14,6 +14,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      currentType: '',
       inputValue: '',
     };
   };
@@ -26,15 +27,20 @@ class App extends Component {
     this.setState({ inputValue: e.target.value })
   }
 
+  updateCurrentType = (type) => {
+    this.setState({ currentType: type })
+  }
+
   hexCodeInput = (e) => {
     e.preventDefault();
     const hexCode = this.state.inputValue;
-    // console.log(this.props.nailpolishColors)
-    const productIDs = this.props.nailpolishColors[hexCode];
-    productIDs.forEach(productID => {
-      const product = this.props.nailpolish[productID];
-      // console.log(product)
-    })
+    const color = this.props.allColors[hexCode];
+      console.log(color)
+  }
+
+  findColor = () => {
+    const colorInput = this.state.inputValue;
+
   }
 
   render() {
@@ -42,16 +48,17 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Header />
-          <Navigation />
+          <Navigation updateCurrentType={this.updateCurrentType}/>
           <Banner />
+          <div className='hexcode-search'>
+            <form onSubmit={this.hexCodeInput}>
+                <input type="text" onChange={this.handleChange} placeholder='# + 6-digit hexcode'></input>
+                <input type="submit" value="Submit" className='submit-btn'></input>
+            </form>
+          </div>
           <ColorList />
           <Route exact path='/favorites' render={()=> <Favorites />}/>
         </header>
-        <p>Enter a hex code:</p>
-        <form onSubmit={this.hexCodeInput}>
-          <input type="text" onChange={this.handleChange}></input>
-          <input type="submit" value="Submit"></input>
-        </form>
       </div>
     )
   };
