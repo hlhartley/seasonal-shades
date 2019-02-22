@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ColorCard from '../ColorCard/ColorCard';
 
 export class ColorList extends Component {
     render() {
@@ -7,7 +8,7 @@ export class ColorList extends Component {
             return(
                 <div className='color-container'>
                     {Object.keys(this.props.nail_polishColors).map((hexcode) => {
-                            return <div className='color' style={{ backgroundColor: hexcode}}><i class="far fa-heart"></i><p>{this.props.allColors[hexcode]}</p></div>
+                            return <ColorCard hexcode={hexcode}/>
                     })
                 }
                 </div>)
