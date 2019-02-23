@@ -6,18 +6,23 @@ import { Banner } from '../../Components/Banner/Banner';
 import ColorList from '../ColorList/ColorList';
 import { setError, setAllColors } from '../../Actions';
 import { connect } from 'react-redux';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { Favorites } from '../../Containers/Favorites/Favorites';
 import ShowColor from '../ShowColor/ShowColor';
+import { fetchMakeup } from '../../Thunks/fetchMakeup';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentType: '',
+      currentType: 'eyeshadow',
       inputValue: '',
     };
   };
+
+  componentDidMount() {
+    this.props.fetchMakeup('eyeshadow')
+  }
 
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value })
@@ -55,6 +60,9 @@ class App extends Component {
           </div>
           {/* <ShowColor /> */}
           <Switch>
+            <Route exact path='/'>
+              <Redirect to='/eyeshadow'/>
+            </Route>
             <Route exact path='/favorites' render={()=> <Favorites />}/>
             <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList type={this.state.currentType}/>}/>
           </Switch>
@@ -77,6 +85,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setError: (error) => dispatch(setError(error)),
+  fetchMakeup: (path) => dispatch(fetchMakeup(path))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
