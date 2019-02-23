@@ -8,8 +8,8 @@ export const Header = () => {
                 <i class="fas fa-search"></i>
             </div> */}
             <h1 className='title'>Seasonal Shades</h1>
-            <div>
-                <i className="fas fa-user-circle"></i>
+            <div className='user-info'>
+                <p>Welcome, User!</p>
                 <i className="fas fa-heart"></i>
             </div>
         </div>
