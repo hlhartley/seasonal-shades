@@ -1,4 +1,4 @@
-import { setAllColors, getLipstick, getLipstickColors, getBlush, getBlushColors, getEyeshadow, getEyeshadowColors, getNailpolish, getNailpolishColors, setLoading, setError } from '../Actions/index';
+import { setAllColors, getLipstickColors, getBlushColors, getEyeshadowColors, getNailpolishColors, setLoading, setError } from '../Actions/index';
 import { API } from '../Helpers/requests';
 import { makeColorObj } from '../Helpers/colorsHelper'
 

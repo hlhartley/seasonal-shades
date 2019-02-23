@@ -71,13 +71,9 @@ class App extends Component {
 };
 
 const mapStateToProps = (state) => ({
-  nail_polish: state.nailpolish,
   nail_polishColors: state.nailpolishColors,
-  lipstick: state.lipstick,
   lipstickColors: state.lipstickColors,
-  blush: state.blush,
   blushColors: state.blushColors,
-  eyeshadow: state.eyeshadow,
   eyeshadowColors: state.eyeshadowColors,
   allColors: state.allColors,
 });
