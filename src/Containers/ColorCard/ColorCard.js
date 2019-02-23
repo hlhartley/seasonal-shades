@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 export class ColorCard extends Component {
     render() {
         return(
-            <NavLink to='/'>
+            <NavLink to={`/${this.props.type}/${this.props.hexcode}`}>
                 <div className='color' style={{ backgroundColor: this.props.hexcode}}>
                     <i class="far fa-heart"></i>
                     <p>{this.props.allColors[this.props.hexcode]}</p>

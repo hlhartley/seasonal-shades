@@ -45,6 +45,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props[this.state.currentType+'Colors'])
     return (
       <div className="App">
         <header className="App-header">
@@ -57,9 +58,17 @@ class App extends Component {
                 <input type="submit" value="Submit" className='submit-btn'></input>
             </form>
           </div>
-          <ShowColor />
-          <Route exact path='/favorites' render={()=> <Favorites />}/>
-          <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList />}/>
+          {/* <ShowColor /> */}
+          <Switch>
+            <Route exact path='/favorites' render={()=> <Favorites />}/>
+            <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList type={this.state.currentType}/>}/>
+          </Switch>
+          <Route path={`/${this.state.currentType}/:hexcode`} render={({ match }) => {
+            const colorToShow = this.props[this.state.currentType+'Colors']
+            if (colorToShow) {
+              return <ShowColor {...colorToShow} />
+            }
+          }} />
         </header>
       </div>
     )
@@ -67,8 +76,14 @@ class App extends Component {
 };
 
 const mapStateToProps = (state) => ({
-  nailpolish: state.nailpolish,
-  nailpolishColors: state.nailpolishColors,
+  nail_polish: state.nailpolish,
+  nail_polishColors: state.nailpolishColors,
+  lipstick: state.lipstick,
+  lipstickColors: state.lipstickColors,
+  blush: state.blush,
+  blushColors: state.blushColors,
+  eyeshadow: state.eyeshadow,
+  eyeshadowColors: state.eyeshadowColors,
   allColors: state.allColors,
 });
 
