@@ -1,8 +1,7 @@
 .navigation-container {
-    border-bottom: 15px solid #d77871;
+    border-bottom: 15px solid #f1d8c8;
     display: flex;
     justify-content: space-around;
-    padding-bottom: 15px;
     
     button{
         border: none;
@@ -10,4 +9,19 @@
         font-size: 17px;
         letter-spacing: 2.5px;
     };
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        height: 30px;
+        margin-bottom: 0;
+        background-color: #e8e8e8;
+        width: 20vw;
+    }
+    .is-active {
+        background-color: #f1d8c8;
+    }
 };
+
