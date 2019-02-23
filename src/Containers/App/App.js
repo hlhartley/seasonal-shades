@@ -45,7 +45,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props[this.state.currentType+'Colors'])
+    // console.log(this.props[this.state.currentType+'Colors'])
     return (
       <div className="App">
         <header className="App-header">
