@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { formatColorName } from '../../Helpers/colorsHelper';
 
 export class ColorCard extends Component {
     render() {
-        return(
-            'hi'
-            // <NavLink to={`/${this.props.type}/${this.props.color}`}>
-            //     <div className='color' style={{ backgroundColor: this.props.allColors[this.props.colour_name]}}>
-            //         <i class="far fa-heart"></i>
-            //         <p>{this.props.allColors[this.props.colour_name]}</p>
-            //     </div>
-            // </NavLink>
-        )
+        const formattedColor = formatColorName(this.props.color);
+        const { hexcode, product } = this.props.allColors[formattedColor];
+
+        if (Object.keys(this.props.allColors).length) {
+            return(
+                <NavLink to={`/${this.props.type}/${formattedColor}`}>
+                    <div className='color' style={{ backgroundColor: hexcode }}>
+                        <i class="far fa-heart"></i>
+                        <p>{this.props.color}</p>
+                    </div>
+                </NavLink>
+            )
+        } else {
+            return (
+                <p>BLAH</p>
+            )
+        }
     };
 };
 

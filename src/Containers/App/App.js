@@ -58,7 +58,7 @@ class App extends Component {
             <Route exact path='/favorites' render={()=> <Favorites />}/>
             <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList type={this.state.currentType}/>}/>
           </Switch>
-          <Route path={`/${this.state.currentType}/:hexcode`} render={({ match }) => {
+          <Route path={`/${this.state.currentType}/:color`} render={({ match }) => {
             const colorToShow = this.props[this.state.currentType+'Colors']
             if (colorToShow) {
               return <ShowColor {...colorToShow} />
