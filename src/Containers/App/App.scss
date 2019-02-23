@@ -1,3 +1,19 @@
 body {
     display: grid;
 }
+
+.hexcode-search {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn {
+    background-color: #ead5ba;
+    height: 27px;
+    margin-left: 7px;
+    border-radius: 5px;
+}
+
