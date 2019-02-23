@@ -1,5 +1,5 @@
-export const getAllColors = (colors) => ({
-    type: 'GET_ALL_COLORS',
+export const setAllColors = (colors) => ({
+    type: 'SET_ALL_COLORS',
     colors,
 })
 

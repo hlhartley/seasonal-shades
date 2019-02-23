@@ -4,11 +4,10 @@ import { Header } from '../../Components/Header/Header';
 import Navigation from '../Navigation/Navigation';
 import { Banner } from '../../Components/Banner/Banner';
 import ColorList from '../ColorList/ColorList';
-import { setError, getAllColors } from '../../Actions';
+import { setError, setAllColors } from '../../Actions';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { Favorites } from '../../Containers/Favorites/Favorites';
-import { fetchAllColors } from '../../Thunks/fetchMakeup';
 import ShowColor from '../ShowColor/ShowColor';
 
 class App extends Component {
@@ -19,10 +18,6 @@ class App extends Component {
       inputValue: '',
     };
   };
-
-  componentDidMount = () => {
-    this.props.fetchAllColors()
-  }
 
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value })
@@ -89,7 +84,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setError: (error) => dispatch(setError(error)),
-  fetchAllColors: () => dispatch(fetchAllColors())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

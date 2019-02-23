@@ -1,8 +1,8 @@
 export const allColorsReducer = (state = {}, action) => {
     switch(action.type) {
-        case 'GET_ALL_COLORS':
-            return action.colors
+        case 'SET_ALL_COLORS':
+            return { ...state, ...action.colors };
         default:
-            return state
+            return state;
     };
 };
