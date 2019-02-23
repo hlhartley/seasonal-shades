@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { Favorites } from '../../Containers/Favorites/Favorites';
 import { fetchAllColors } from '../../Thunks/fetchMakeup';
+import ShowColor from '../ShowColor/ShowColor';
 
 class App extends Component {
   constructor() {
@@ -57,6 +58,7 @@ class App extends Component {
             </form>
           </div>
           <ColorList />
+          <ShowColor />
           <Route exact path='/favorites' render={()=> <Favorites />}/>
         </header>
       </div>
