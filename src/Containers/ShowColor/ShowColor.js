@@ -5,7 +5,7 @@ class ShowColor extends Component {
     render() {
         return(
             <div>
-               ShowColor
+                <p>{this.props.color}</p>
             </div>
         )
     }
