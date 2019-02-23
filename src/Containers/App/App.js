@@ -32,12 +32,12 @@ class App extends Component {
     this.setState({ currentType: type })
   }
 
-  hexCodeInput = (e) => {
-    e.preventDefault();
-    const hexCode = this.state.inputValue;
-    const color = this.props.allColors[hexCode];
-      console.log(color)
-  }
+  // hexCodeInput = (e) => {
+  //   e.preventDefault();
+  //   const hexCode = this.state.inputValue;
+  //   const color = this.props.allColors[hexCode];
+  //     console.log(color)
+  // }
 
   findColor = () => {
     const colorInput = this.state.inputValue;

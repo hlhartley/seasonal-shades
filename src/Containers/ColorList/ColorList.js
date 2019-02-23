@@ -4,20 +4,26 @@ import ColorCard from '../ColorCard/ColorCard';
 
 export class ColorList extends Component {
     render() {
-        if (Object.keys(this.props.nail_polishColors).length > 1) {
-            return(
-                <div className='color-container'>
-                    {Object.keys(this.props.nail_polishColors).map((hexcode) => {
-                            return <ColorCard hexcode={hexcode} type={this.props.type}/>
-                    })
-                }
-                </div>)
-        } else {
-            return(
-                <p>colorList</p>
-            )
-        }
-    }
+        return(
+            <p>colorlist</p>
+        )
+    //     if (Object.keys(this.props[this.props.type+'Colors']).length > 1) {
+    //         return(
+    //             <div className='color-container'>
+    //             {Object.keys(this.props[this.props.type+'Colors']).map((color) => {
+    //                     return <ColorCard color={color} type={this.props.type}/>
+    //             })
+    //         }
+    //         </div>
+    //         <p>no</p>
+    //             )
+    //     } else {
+    //         return(
+    //             <p>colorList</p>
+    //         )
+    //     }
+    // }
+}
 }
 
 export const mapStateToProps = (state) => ({
