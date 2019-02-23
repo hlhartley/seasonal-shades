@@ -57,9 +57,9 @@ class App extends Component {
                 <input type="submit" value="Submit" className='submit-btn'></input>
             </form>
           </div>
-          <ColorList />
           <ShowColor />
           <Route exact path='/favorites' render={()=> <Favorites />}/>
+          <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList />}/>
         </header>
       </div>
     )
