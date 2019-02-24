@@ -1,6 +1,6 @@
-# Seasonal Shades
+# Seasonal Shades (Individual Project)
 
-App description
+Seasonal Shades is an app for makeup lovers wanting to find the perfect shade of lipstick, blush, eyeshadow, or nailpolish. It is also for people looking for color inspirations. Users can browse colors by category or type in a color to see the instant matches via a fuzzy search. When a user clicks on a color, they are routed to a separate page and can see products that match that color with info including: name, brand, price, and website link.
 
 ### Set-Up Frontend:
 - Clone this repo
@@ -35,5 +35,3 @@ Run `npm test` from the root directory
 ![Wireframes-mobile](ss-mobile-wireframe4.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
