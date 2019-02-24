@@ -4,6 +4,7 @@ exports[`ColorCard ColorCard component should match the correct snapshot with al
 <NavLink
   activeClassName="active"
   aria-current="page"
+  className="color-link"
   to="/lipstick/casablanca"
 >
   <div

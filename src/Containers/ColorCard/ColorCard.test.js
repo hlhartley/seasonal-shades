@@ -20,7 +20,7 @@ describe('ColorCard', () => {
             }
         }
         beforeEach(() => {
-            wrapper = shallow(<ColorCard color={'casablanca'} type={'lipstick'} allColors={allColors} lipstickColors={[]} blushColors={[]} eyeshadowColors={[]} nail_polishColors={[]}/>)
+            wrapper = shallow(<ColorCard color={'casablanca'} type={'lipstick'} allColors={allColors} lipstickColors={[]} blushColors={undefined} eyeshadowColors={undefined} nail_polishColors={undefined}/>)
         });
 
         it('should match the correct snapshot with all the data passed in', () => {
@@ -29,7 +29,7 @@ describe('ColorCard', () => {
     });
 
     describe('mapStateToProps', () => {
-        it('should return an object with all colors', () => {
+        it('should return an object with all colors, blushColors, eyeshadowColors, lipstickColors, and nail_polishColors', () => {
             const mockState = {
                 allColors: {
                     522: {
@@ -45,7 +45,7 @@ describe('ColorCard', () => {
                         hexcode: '#444446'
                     }
                 },
-                lipstickColors: []
+                eyeshadowColors: [],
             }
             const expected = {
                 allColors: {
@@ -60,8 +60,8 @@ describe('ColorCard', () => {
                     'casablanca': {
                         product: {},
                         hexcode: '#444446'
-                    }
-                }
+                    },
+                },
             }
             const mappedProps = mapStateToProps(mockState)
             expect(mappedProps).toEqual(expected)
