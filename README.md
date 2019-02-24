@@ -1,6 +1,6 @@
-# Seasonal Shades (Individual Project)
+# Seasonal Shades
 
-Seasonal Shades is an app for makeup lovers wanting to find the perfect shade of lipstick, blush, eyeshadow, or nailpolish. It is also for people looking for color inspirations. Users can browse colors by category or type in a color to see the instant matches via a fuzzy search. When a user clicks on a color, they are routed to a separate page and can see products that match that color with info including: name, brand, price, and website link.
+My inspiration for creating Seasonal Shades was to give makeup lovers color ideas who want to find the perfect shade of lipstick, blush, eyeshadow, or nailpolish. Users can browse colors by category or type in a color to see the instant matches via a fuzzy search. When a user clicks on a color, they are routed to a separate page and can see products that match that color with info including: name, brand, price, and website link.
 
 ### Set-Up Frontend:
 - Clone this repo
