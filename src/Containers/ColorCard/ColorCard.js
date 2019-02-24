@@ -31,7 +31,6 @@ export class ColorCard extends Component {
 
 export const mapStateToProps = (state) => ({
     allColors: state.allColors,
-    favorites: state.favorites,
 })
 
 export const mapDispatchToProps = (dispatch) => ({

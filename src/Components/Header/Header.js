@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return(
@@ -10,7 +11,7 @@ const Header = () => {
             <h1 className='title'>Seasonal Shades</h1>
             <div className='user-info'>
                 <p>Welcome, User!</p>
-                <i className="fas fa-heart"></i>
+                <NavLink to='/favorites'><i className="fas fa-heart"></i></NavLink>
             </div>
         </div>
     )
