@@ -13,7 +13,7 @@ export class ColorCard extends Component {
 
         if (Object.keys(this.props.allColors).length) {
             return(
-                <NavLink to={`/${this.props.type}/${formattedColor}`}>
+                <NavLink to={`/${this.props.type}/${formattedColor}`} className='color-link'>
                     <div className='color' style={{ backgroundColor: hexcode }}>
                         <i className="far fa-heart"></i>
                         <p className='color-hexcode-text'>{this.props.color}</p>
@@ -22,7 +22,7 @@ export class ColorCard extends Component {
             )
         } else {
             return (
-                <p>BLAH</p>
+                <p>Loading all colors...</p>
             )
         }
     };

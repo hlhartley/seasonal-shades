@@ -24,3 +24,15 @@
     display: block;
     text-align: right;
 }
+
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    font-size: 19px;
+}
+
+.fa-clock {
+    margin-right: 8px;
+}
