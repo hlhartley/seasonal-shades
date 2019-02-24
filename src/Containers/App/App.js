@@ -11,7 +11,7 @@ import { Favorites } from '../../Containers/Favorites/Favorites';
 import ShowColor from '../ShowColor/ShowColor';
 import { fetchMakeup } from '../../Thunks/fetchMakeup';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,9 +20,9 @@ class App extends Component {
     };
   };
 
-  componentDidMount() {
-    this.props.fetchMakeup('eyeshadow')
-  }
+  // componentDidMount() {
+  //   this.props.fetchMakeup('eyeshadow')
+  // }
 
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value })
@@ -75,7 +75,7 @@ class App extends Component {
   };
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   nail_polishColors: state.nailpolishColors,
   lipstickColors: state.lipstickColors,
   blushColors: state.blushColors,
@@ -83,7 +83,7 @@ const mapStateToProps = (state) => ({
   allColors: state.allColors,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   setError: (error) => dispatch(setError(error)),
   fetchMakeup: (path) => dispatch(fetchMakeup(path))
 });

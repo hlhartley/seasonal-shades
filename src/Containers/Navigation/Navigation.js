@@ -25,7 +25,6 @@ export class Navigation extends Component {
         )
     }
 }
-    // console.log(props)
 
 const mapDispatchToProps = (dispatch) => ({
     fetchMakeup: (path) => dispatch(fetchMakeup(path)),
