@@ -25,6 +25,9 @@ Run `npm test` from the root directory
 ### Original Assignment: 
 [Binary Challenge](http://frontend.turing.io/projects/binary-challenge.html)  
 
+### Component Planning:
+[Component Planning](ss-components-planning.png)
+
 ### Wireframes:
 #### Desktop View:
 ![Wireframes-desktop](ss-desktop-wireframes.png)
