@@ -17,7 +17,7 @@ export class ColorList extends Component {
             )
         } else {
             return (
-                <p>No Product Found...</p>
+                <p>Loading colors...</p>
             )
         }
     }

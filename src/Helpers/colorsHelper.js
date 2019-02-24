@@ -1,6 +1,6 @@
 export const formatColorName = (input) => {
     if (input) {
-        return input.toLowerCase().trim().replace(/[\s'_()]/g, '');
+        return input.toLowerCase().trim().replace(/[\s'&_()]/g, '');
     }
     return 'none';
 }

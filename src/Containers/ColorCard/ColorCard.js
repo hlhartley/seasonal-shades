@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom';
 import { formatColorName } from '../../Helpers/colorsHelper';
 
 export class ColorCard extends Component {
+    constructor() {
+        super()
+    }
     render() {
         const formattedColor = formatColorName(this.props.color);
         const { hexcode, product } = this.props.allColors[formattedColor];
@@ -12,8 +15,8 @@ export class ColorCard extends Component {
             return(
                 <NavLink to={`/${this.props.type}/${formattedColor}`}>
                     <div className='color' style={{ backgroundColor: hexcode }}>
-                        <i class="far fa-heart"></i>
-                        <p>{this.props.color}</p>
+                        <i className="far fa-heart"></i>
+                        <p className='color-hexcode-text'>{this.props.color}</p>
                     </div>
                 </NavLink>
             )

@@ -67,7 +67,7 @@ class App extends Component {
             <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList type={this.state.currentType}/>}/>
           </Switch>
           <Route path={`/${this.state.currentType}/:color`} render={({ match }) => {
-              return <ShowColor color={match.params.color} />
+              return <ShowColor color={match.params.color} type={this.state.currentType}/>
           }} />
         </header>
       </div>
