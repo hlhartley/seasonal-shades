@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner component should match the snapshot with all data passed in correctly 1`] = `
+<div
+  className="banner-container"
+>
+  <img
+    className="banner-img"
+    src="blush.jpg"
+  />
+</div>
+`;

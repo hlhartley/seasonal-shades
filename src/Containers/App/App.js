@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../../../src/main.scss';
-import { Header } from '../../Components/Header/Header';
+import Header from '../../Components/Header/Header';
 import Navigation from '../Navigation/Navigation';
-import { Banner } from '../../Components/Banner/Banner';
+import Banner from '../../Components/Banner/Banner';
 import ColorList from '../ColorList/ColorList';
 import { setError, setAllColors } from '../../Actions';
 import { connect } from 'react-redux';

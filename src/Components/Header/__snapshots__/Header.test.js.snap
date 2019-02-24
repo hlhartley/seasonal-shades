@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should match the snapshot with all the data passed in correctly 1`] = `
+<div
+  className="header-container"
+>
+  <h1
+    className="title"
+  >
+    Seasonal Shades
+  </h1>
+  <div
+    className="user-info"
+  >
+    <p>
+      Welcome, User!
+    </p>
+    <i
+      className="fas fa-heart"
+    />
+  </div>
+</div>
+`;

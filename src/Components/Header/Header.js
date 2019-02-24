@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Header = () => {
+const Header = () => {
     return(
         <div className='header-container'>
             {/* <div className='search-container'>
@@ -15,4 +15,6 @@ export const Header = () => {
         </div>
     )
 };
+
+export default Header;
 
