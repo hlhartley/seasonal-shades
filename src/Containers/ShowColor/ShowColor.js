@@ -27,7 +27,7 @@ class ShowColor extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     nail_polishColors: state.nailpolishColors,
     lipstickColors: state.lipstickColors,
     blushColors: state.blushColors,
