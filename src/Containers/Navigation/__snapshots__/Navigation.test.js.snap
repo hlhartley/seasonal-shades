@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation Navigation component should match the snapshot with all the data passed in correctly 1`] = `
+<div
+  className="navigation-container"
+>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="is-active"
+    onClick={[Function]}
+    to="/eyeshadow"
+  >
+    EYES
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="not-active"
+    onClick={[Function]}
+    to="/lipstick"
+  >
+    LIPS
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="not-active"
+    onClick={[Function]}
+    to="/blush"
+  >
+    CHEEKS
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="not-active"
+    onClick={[Function]}
+    to="/nail_polish"
+  >
+    NAILS
+  </NavLink>
+</div>
+`;
