@@ -7,11 +7,6 @@ export const fetchMakeup = (path) => {
         try {
             dispatch(setLoading(true));
             const someProduct = await API(path);
-            
-            
-            console.log("SOME PRODUCT", path, someProduct)
-
-
             const { allColors, productColors } = loadColors(someProduct);
             dispatch(setAllColors(allColors));
 

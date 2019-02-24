@@ -17,8 +17,6 @@ export const loadColors = (productType) => {
                     product,
                     hexcode: color.hex_value,
                 };
-            } else {
-                debugger
             }
         });
     });
