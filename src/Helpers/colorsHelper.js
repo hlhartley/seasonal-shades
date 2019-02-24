@@ -1,6 +1,6 @@
 export const formatColorName = (input) => {
     if (input) {
-        return input.toLowerCase().trim().replace(/[\s'&_()]/g, '');
+        return input.toLowerCase().trim().replace(/[\s'&_()-]/g, '');
     }
     return 'none';
 }
@@ -11,11 +11,15 @@ export const loadColors = (productType) => {
     
     productType.forEach((product) => {
         product.product_colors.forEach(color => {
-            productColors.push(color.colour_name.trim());
-            allColors[formatColorName(color.colour_name)] = {
-                product,
-                hexcode: color.hex_value,
-            };
+            if (color.colour_name) {
+                productColors.push(color.colour_name.trim());
+                allColors[formatColorName(color.colour_name)] = {
+                    product,
+                    hexcode: color.hex_value,
+                };
+            } else {
+                debugger
+            }
         });
     });
     
