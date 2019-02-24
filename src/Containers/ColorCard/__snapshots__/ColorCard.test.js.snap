@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorCard ColorCard component should match the correct snapshot with all the data passed in 1`] = `
+<NavLink
+  activeClassName="active"
+  aria-current="page"
+  to="/lipstick/casablanca"
+>
+  <div
+    className="color"
+    style={
+      Object {
+        "backgroundColor": "#444446",
+      }
+    }
+  >
+    <i
+      className="far fa-heart"
+    />
+    <p
+      className="color-hexcode-text"
+    >
+      casablanca
+    </p>
+  </div>
+</NavLink>
+`;
