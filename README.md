@@ -29,7 +29,7 @@ Run `npm test` from the root directory
 #### Desktop View:
 ![Wireframes-desktop](ss-desktop-wireframes.png)
 #### Mobile View:
-![Wireframes-mobile](ss-mobile-wireframes.png)
+![Wireframes-mobile](ss-mobile-wireframes2.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
