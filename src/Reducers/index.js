@@ -5,6 +5,7 @@ import { blushColorsReducer } from './blushColorsReducer/blushColorsReducer';
 import { eyeshadowColorsReducer } from './eyeshadowColorsReducer/eyeshadowColorsReducer';
 import { nailpolishColorsReducer } from './nailpolishColorsReducer/nailpolishColorsReducer';
 import { allColorsReducer } from './allColorsReducer/allColorsReducer';
+import { favoritesReducer } from './favoritesReducer/favoritesReducer';
 
 const rootReducer = combineReducers({
     error: errorReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     eyeshadowColors: eyeshadowColorsReducer,
     nailpolishColors: nailpolishColorsReducer,
     allColors: allColorsReducer,
+    favorites: favoritesReducer,
 });
 
 export default rootReducer;

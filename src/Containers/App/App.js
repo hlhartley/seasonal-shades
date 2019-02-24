@@ -7,7 +7,7 @@ import ColorList from '../ColorList/ColorList';
 import { setError } from '../../Actions';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
-import { Favorites } from '../../Containers/Favorites/Favorites';
+import Favorites from '../../Containers/Favorites/Favorites';
 import ShowColor from '../ShowColor/ShowColor';
 import { fetchMakeup } from '../../Thunks/fetchMakeup';
 

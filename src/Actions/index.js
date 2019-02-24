@@ -23,6 +23,11 @@ export const getNailpolishColors = (colors) => ({
     colors,
 });
 
+export const toggleFavorite = (colorName) => ({
+    type: 'TOGGLE_FAVORITE',
+    colorName,
+})
+
 export const setLoading = (bool) => ({
     type: 'SET_LOADING',
     bool,
