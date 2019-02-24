@@ -9,7 +9,7 @@ export class ColorCard extends Component {
     }
     render() {
         const formattedColor = formatColorName(this.props.color);
-        const { hexcode, product } = this.props.allColors[formattedColor];
+        const { hexcode } = this.props.allColors[formattedColor];
 
         if (Object.keys(this.props.allColors).length) {
             return(

@@ -4,7 +4,7 @@ import Header from '../../Components/Header/Header';
 import Navigation from '../Navigation/Navigation';
 import Banner from '../../Components/Banner/Banner';
 import ColorList from '../ColorList/ColorList';
-import { setError, setAllColors } from '../../Actions';
+import { setError } from '../../Actions';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { Favorites } from '../../Containers/Favorites/Favorites';
@@ -20,9 +20,9 @@ export class App extends Component {
     };
   };
 
-  // componentDidMount() {
-  //   this.props.fetchMakeup('eyeshadow')
-  // }
+  componentDidMount() {
+    this.props.fetchMakeup('eyeshadow')
+  }
 
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value })
@@ -45,7 +45,6 @@ export class App extends Component {
   }
 
   render() {
-    // console.log(this.props[this.state.currentType+'Colors'])
     return (
       <div className="App">
         <header className="App-header">
@@ -58,7 +57,6 @@ export class App extends Component {
                 <input type="submit" value="Submit" className='submit-btn'></input>
             </form>
           </div>
-          {/* <ShowColor /> */}
           <Switch>
             <Route exact path='/'>
               <Redirect to='/eyeshadow'/>
