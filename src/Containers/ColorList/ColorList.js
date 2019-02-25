@@ -18,7 +18,7 @@ export class ColorList extends Component {
             )
         } else {
             return (
-                <p className='loading-message'><i class="far fa-clock"></i> Loading colors...</p>
+                <p className='loading-message'><i className="far fa-clock"></i> Loading colors...</p>
             )
         }
     }

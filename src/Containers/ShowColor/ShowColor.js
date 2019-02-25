@@ -5,9 +5,6 @@ import ProductCard from '../ProductCard/ProductCard';
 import PropTypes from 'prop-types';
 
 class ShowColor extends Component {
-    constructor() {
-        super()
-    }
     render() {
         const type = this.props.type.toUpperCase()
         if(this.props.allColors) {

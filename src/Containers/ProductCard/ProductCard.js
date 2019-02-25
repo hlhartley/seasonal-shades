@@ -14,7 +14,7 @@ export class ProductCard extends Component {
                 </div>
                 <div className='product-info'>
                     <div>
-                        <img src={`${this.props.allColors[this.props.color].product.image_link}`} className='product-image'/>
+                        <img src={`${this.props.allColors[this.props.color].product.image_link}`} className='product-image' alt='matching product'/>
                     </div>
                     <div className='product-info-text'>
                         <p><b>Brand:</b> {this.props.allColors[this.props.color].product.brand}</p>
