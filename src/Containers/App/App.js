@@ -21,9 +21,9 @@ export class App extends Component {
     };
   };
 
-  // componentDidMount() {
-  //   this.props.fetchMakeup('eyeshadow')
-  // }
+  componentDidMount() {
+    this.props.fetchMakeup('eyeshadow')
+  }
 
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value })
