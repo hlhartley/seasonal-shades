@@ -12,7 +12,7 @@ export class Favorites extends Component {
                 <div className='favorite-colors-container'>
                 {Object.keys(this.props.favorites).map((favoriteColor) => {
                     return (
-                        <ColorCard color={favoriteColor}/>
+                        <ColorCard color={favoriteColor} type={this.props.type}/>
                         )
                     })
                 }
@@ -38,6 +38,7 @@ export const mapStateToProps = (state) => ({
 Favorites.propTypes = {
     allColors: PropTypes.object,
     favorites: PropTypes.object,
+    type: PropTypes.string,
 };
 
 export default connect(mapStateToProps)(Favorites);

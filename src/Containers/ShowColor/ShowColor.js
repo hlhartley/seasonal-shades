@@ -11,7 +11,9 @@ class ShowColor extends Component {
             return(
                 <div className='color-info-card'>
                     <h2 className='color-info-card-title'>{`${type}`}</h2>
-                    <ColorCard color={this.props.color}/>
+                    
+                    <ColorCard color={this.props.color} type={this.props.type}/>
+                    
                     <div className='product-info-card'>
                         <ProductCard color={this.props.color}/>
                     </div>

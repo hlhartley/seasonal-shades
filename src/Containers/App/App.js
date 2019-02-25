@@ -57,7 +57,7 @@ export class App extends Component {
             <Route exact path='/'>
               <Redirect to='/eyeshadow'/>
             </Route>
-            <Route exact path='/favorites' render={()=> <Favorites />}/>
+            <Route exact path='/favorites' render={()=> <Favorites type={this.state.currentType}/>}/>
             <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList type={this.state.currentType}/>}/>
             <Route path={`/${this.state.currentType}/:color`} render={({ match }) => {
                 return <ShowColor color={match.params.color} type={this.state.currentType}/>
