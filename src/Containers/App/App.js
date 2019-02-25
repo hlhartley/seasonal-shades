@@ -45,7 +45,7 @@ export class App extends Component {
       <div className="App">
         <header className="App-header">
           <Header />
-          <Navigation updateCurrentType={this.updateCurrentType}/>
+          <Navigation updateCurrentType={this.updateCurrentType} />
           <Banner />
           <div className='hexcode-search'>
             <form onSubmit={this.hexCodeInput}>
