@@ -12,7 +12,9 @@ export const loadColors = (productType) => {
     productType.forEach((product) => {
         product.product_colors.forEach(color => {
             if (color.colour_name) {
-                productColors.push(color.colour_name.trim());
+                if(!productColors.includes(color.colour_name)) {
+                    productColors.push(color.colour_name.trim());
+                }
                 allColors[formatColorName(color.colour_name)] = {
                     product,
                     hexcode: color.hex_value,
