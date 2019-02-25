@@ -14,12 +14,12 @@ export class ColorCard extends Component {
         const { hexcode } = this.props.allColors[formattedColor];
         if (Object.keys(this.props.allColors).length) {
             return(
-                // <NavLink to={`/${this.props.type}/${formattedColor}`} className='color-link'>
+                <NavLink to={`/${this.props.type}/${formattedColor}`} className='color-link'>
                     <div className='color' style={{ backgroundColor: hexcode }}>
                         <i className={this.props.favorites[formattedColor] ? "fas fa-heart" : "far fa-heart"} onClick={() => this.props.toggleFavorite(formattedColor)}></i>
                         <p className='color-hexcode-text'>{this.props.color}</p>
                     </div>
-                // </NavLink>
+                </NavLink>
             )
         } else {
             return (
