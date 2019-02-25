@@ -5,14 +5,15 @@ import PropTypes from 'prop-types';
 
 export class ColorList extends Component {
     render() {
-        const productType = this.props.type+'Colors';
+        const { type } = this.props
+        const productType = type+'Colors';
         const productColors = this.props[productType];
 
         if (productColors && productColors.length) {
             return (
                 <div className='color-container'>
                     {productColors.map((color) => {
-                        return <ColorCard color={color} type={this.props.type} />
+                        return <ColorCard color={color} type={type} />
                     })}
                 </div>
             )
