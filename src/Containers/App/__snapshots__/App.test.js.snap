@@ -7,15 +7,16 @@ exports[`App App Component should match the correct snapshot with everything pas
   <header
     className="App-header"
   >
-    <Header />
+    <Connect(Header) />
     <Connect(Navigation)
       updateCurrentType={[Function]}
     />
     <Banner
       type="eyeshadow"
     />
-    <Search
+    <Connect(Search)
       handleChange={[Function]}
+      type="eyeshadow"
     />
     <Switch>
       <Route
