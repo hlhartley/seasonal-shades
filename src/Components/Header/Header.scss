@@ -16,7 +16,7 @@
     };
 
     .fa-heart {
-        color: #db7a74;
+        color: $grapefruit-color;
         margin-right: 25px;
     };
     
@@ -25,17 +25,3 @@
         align-items: center;
     }
 }
-
-// .search-container {
-//     display: flex;
-//     align-items: center;
-
-//     .search-input {
-//         height: 25px;
-//         margin-left: 25px;
-//     };
-
-//     .fa-search {
-//         font-size: 24px;
-//     };
-// }
