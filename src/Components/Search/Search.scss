@@ -1,18 +1,18 @@
 .color-search {
+    align-items: center;
     background-color: $tan-color;
-    padding-top: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .fa-search {
-    margin-right: 10px;
     font-size: 20px;
+    margin-right: 10px;
 }
 
 .search-input {
-    width: 200px;
     padding: 5px 5px 5px 10px;
+    width: 200px;
 }

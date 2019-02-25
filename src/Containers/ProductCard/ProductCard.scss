@@ -4,15 +4,15 @@
 }
 
 .product-image {
+    height: 150px;
     margin-top: 20px;
     width: 150px;
-    height: 150px;
 }
 
 .product-info {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .product-info-text {

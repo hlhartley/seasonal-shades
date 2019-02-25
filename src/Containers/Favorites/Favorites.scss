@@ -1,21 +1,21 @@
 .favorite-colors-container {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .favorite-colors-text {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .no-favorites-container {
-    margin-top: 35px;
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    margin-top: 35px;
 }
 
 .no-favorites-text {
@@ -23,6 +23,6 @@
 }
 
 .fa-heart-broken {
-    font-size: 40px;
     color: $grapefruit-color;
+    font-size: 40px;
 }

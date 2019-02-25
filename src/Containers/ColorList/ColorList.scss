@@ -1,9 +1,9 @@
 .color-container,
 .filtered-color-container {
+    align-items: center;
     display: flex;
     flex-flow: wrap;
     justify-content: center;
-    align-items: center;
     padding-top: 10px;
         
     p {
@@ -13,26 +13,26 @@
 }
 
 .color {
-    width: 100px;
+    border: 1px solid grey;
     height: 100px;
     margin: 10px;
-    border: 1px solid grey;
     padding: 6px;
+    width: 100px;
 }
 
 .fa-heart {
-    display: block;
-    text-align: right;
     color: $grapefruit-color;
+    display: block;
     font-size: 20px;
+    text-align: right;
 }
 
 .loading-message {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    display: flex;
     font-size: 19px;
+    justify-content: center;
+    margin-top: 25px;
 }
 
 .fa-clock {
