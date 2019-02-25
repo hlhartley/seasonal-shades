@@ -20,7 +20,7 @@ export class ProductCard extends Component {
                     <div className='product-info-text'>
                         <p><b>Brand:</b> {allColors[color].product.brand}</p>
                         <p><b>Price:</b> ${allColors[color].product.price}</p>
-                        <p><b>Website:</b> {allColors[color].product.website_link}</p>
+                        <p><b>Website:</b> <a href={`${allColors[color].product.website_link}`} target={'_blank'}>{allColors[color].product.website_link}</a></p>
                     </div>
                 </div>
             </div>
