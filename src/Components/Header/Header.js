@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
     return(
@@ -11,7 +12,14 @@ const Header = () => {
             <h1 className='title'>Seasonal Shades</h1>
             <div className='user-info'>
                 <p>Welcome, User!</p>
-                <NavLink to='/favorites'><i className="fas fa-heart"></i></NavLink>
+                <NavLink to='/favorites'>
+                    <i 
+                        data-tip
+                        data-for='tooltip'
+                        className='fas fa-heart'
+                    />
+                </NavLink>
+                <ReactTooltip id='tooltip' type='dark' effect='solid'>View favorites</ReactTooltip>
             </div>
         </div>
     )
