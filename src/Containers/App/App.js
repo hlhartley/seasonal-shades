@@ -79,7 +79,6 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setError: (error) => dispatch(setError(error)),
   fetchMakeup: (path) => dispatch(fetchMakeup(path))
 });
 
