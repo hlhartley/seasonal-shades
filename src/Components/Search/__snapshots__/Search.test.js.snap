@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Component should take a snapshot and pass in the data correctly 1`] = `
+<div
+  className="color-search"
+>
+  <i
+    className="fas fa-search"
+  />
+  <input
+    className="search-input"
+    onChange={[MockFunction]}
+    placeholder="Search by color name"
+    type="text"
+  />
+</div>
+`;

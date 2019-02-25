@@ -14,22 +14,9 @@ exports[`App App Component should match the correct snapshot with everything pas
     <Banner
       type="eyeshadow"
     />
-    <div
-      className="hexcode-search"
-    >
-      <form>
-        <input
-          onChange={[Function]}
-          placeholder="# + 6-digit hexcode"
-          type="text"
-        />
-        <input
-          className="submit-btn"
-          type="submit"
-          value="Submit"
-        />
-      </form>
-    </div>
+    <Search
+      handleChange={[Function]}
+    />
     <Switch>
       <Route
         exact={true}
