@@ -6,10 +6,6 @@ import { toggleFavorite } from '../../Actions';
 import PropTypes from 'prop-types';
 
 export class ColorCard extends Component {
-    constructor() {
-        super();
-    }
-
     render() {
         const formattedColor = formatColorName(this.props.color);
         const { hexcode } = this.props.allColors[formattedColor];
