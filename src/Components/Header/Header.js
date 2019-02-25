@@ -1,17 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const Header = () => {
+
+const Header = (props) => {
     return(
         <div className='header-container'>
-            {/* <div className='search-container'>
-                <input className='search-input'></input>
-                <i class="fas fa-search"></i>
-            </div> */}
             <h1 className='title'>Seasonal Shades</h1>
             <div className='user-info'>
-                <p>Welcome, User!</p>
+                <p><b># Favorites:</b> <u>{Object.keys(props.favorites).length}</u></p>
                 <NavLink to='/favorites'>
                     <i 
                         data-tip
@@ -25,5 +24,13 @@ const Header = () => {
     )
 };
 
-export default Header;
+export const mapStateToProps = (state) => ({
+    favorites: state.favorites,
+});
+
+Header.propTypes = {
+    favorites: PropTypes.object,
+};
+
+export default connect(mapStateToProps)(Header);
 

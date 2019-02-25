@@ -6,7 +6,7 @@ const Search = (props) => {
     if (props[props.type + 'Colors'].length) {
         return(
             <div className='color-search'>
-                <p><b>Total {props.type} results:</b> <u>{`${props[props.type + 'Colors'].length}`}</u></p>
+                <p><b>Total # {props.type} colors:</b> <u>{`${props[props.type + 'Colors'].length}`}</u> results</p>
                 <div>
                     <i className="fas fa-search"></i>
                     <input type="text" onChange={props.handleChange} placeholder='Search by color name' className='search-input'></input>
@@ -16,7 +16,7 @@ const Search = (props) => {
     } else {
         return(
             <div className='color-search'>
-                <p><b>Total {props.type} results:</b> <u>0</u></p>
+                <p><b>Total # {props.type} colors:</b> <u>0</u> results</p>
                 <div>
                     <i className="fas fa-search"></i>
                     <input type="text" onChange={props.handleChange} placeholder='Search by color name' className='search-input'></input>
@@ -36,6 +36,10 @@ export const mapStateToProps = (state) => ({
 Search.propTypes = {
     handleChange: PropTypes.func,
     type: PropTypes.string,
+    nail_polishColors: PropTypes.array,
+    lipstickColors: PropTypes.array,
+    blushColors: PropTypes.array,
+    eyeshadowColors: PropTypes.array,
 }
 
 export default connect(mapStateToProps)(Search)
