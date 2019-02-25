@@ -1,8 +1,8 @@
 import React from 'React';
-import { Navigation } from './Navigation';
+import { Navigation, mapDispatchToProps, mapStateToProps } from './Navigation';
 import { shallow } from 'enzyme';
 import { fetchMakeup } from '../../Thunks/fetchMakeup';
-import { mapDispatchToProps } from './Navigation';
+import { mockState } from '../../__fixtures__/mockData';
 
 jest.mock('../../Thunks/fetchMakeup')
 
@@ -33,6 +33,19 @@ describe('Navigation', () => {
             expect(wrapper.instance().props.updateCurrentType).toHaveBeenCalled()
             await expect(wrapper.instance().props.fetchMakeup).toHaveBeenCalled()
         })
+    });
+
+    describe('mapStateToProps', () => {
+        it('should return an object with arrays of blushColors, eyeshadowColors, lipstickColors, and nail_polishColors', () => {
+            const expected = {
+                blushColors: undefined,
+                eyeshadowColors: undefined,
+                lipstickColors: [],
+                nail_polishColors: undefined,
+            }
+            const mappedProps = mapStateToProps(mockState)
+            expect(mappedProps).toEqual(expected)
+        });
     });
 
     describe('mapDispatchToProps', async () => {
