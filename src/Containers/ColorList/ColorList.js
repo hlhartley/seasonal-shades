@@ -12,7 +12,7 @@ export class ColorList extends Component {
             return (
                 <div className='color-container'>
                     {productColors.map((color) => {
-                        return <ColorCard color={color} type={this.props.type} />
+                        return <ColorCard color={color} type={this.props.type} key={color}/>
                     })}
                 </div>
             )
