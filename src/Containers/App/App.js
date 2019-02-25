@@ -17,7 +17,7 @@ export class App extends Component {
     super();
     this.state = {
       currentType: 'eyeshadow',
-      inputValue: '',
+      colorInputValue: '',
     };
   };
 
@@ -26,19 +26,12 @@ export class App extends Component {
   }
 
   handleChange = (e) => {
-    this.setState({ inputValue: e.target.value })
+    this.setState({ colorInputValue: e.target.value.toLowerCase() })
   }
 
   updateCurrentType = (type) => {
     this.setState({ currentType: type })
   }
-
-  // hexCodeInput = (e) => {
-  //   e.preventDefault();
-  //   const hexCode = this.state.inputValue;
-  //   const color = this.props.allColors[hexCode];
-  //     console.log(color)
-  // }
 
   render() {
     let { currentType } = this.state
@@ -48,18 +41,16 @@ export class App extends Component {
           <Header />
           <Navigation updateCurrentType={this.updateCurrentType} />
           <Banner type={currentType}/>
-          <div className='hexcode-search'>
-            <form onSubmit={this.hexCodeInput}>
-                <input type="text" onChange={this.handleChange} placeholder='# + 6-digit hexcode'></input>
-                <input type="submit" value="Submit" className='submit-btn'></input>
-            </form>
+          <div className='color-search'>
+            <i className="fas fa-search"></i>
+            <input type="text" onChange={this.handleChange} placeholder='Search by color name' className='search-input'></input>
           </div>
           <Switch>
             <Route exact path='/'>
               <Redirect to='/eyeshadow'/>
             </Route>
             <Route exact path='/favorites' render={()=> <Favorites type={currentType}/>}/>
-            <Route exact path={`/${currentType}`} render={()=> <ColorList type={currentType}/>}/>
+            <Route exact path={`/${currentType}`} render={()=> <ColorList type={currentType} colorInput={this.state.colorInputValue}/>}/>
             <Route path={`/${currentType}/:color`} render={({ match }) => {
                 return <ShowColor color={match.params.color} type={currentType}/>
             }} />
