@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ColorCard from '../ColorCard/ColorCard';
 
-class Favorites extends Component {
+export class Favorites extends Component {
     render() {
         if(Object.keys(this.props.favorites).length) {
             return (
