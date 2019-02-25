@@ -10,6 +10,7 @@ import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import Favorites from '../../Containers/Favorites/Favorites';
 import ShowColor from '../ShowColor/ShowColor';
 import { fetchMakeup } from '../../Thunks/fetchMakeup';
+import PageNotFound from '../../Components/PageNotFound/PageNotFound';
 
 export class App extends Component {
   constructor() {
@@ -63,10 +64,11 @@ export class App extends Component {
             </Route>
             <Route exact path='/favorites' render={()=> <Favorites />}/>
             <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList type={this.state.currentType}/>}/>
+            <Route path={`/${this.state.currentType}/:color`} render={({ match }) => {
+                return <ShowColor color={match.params.color} type={this.state.currentType}/>
+            }} />
+            <Route path = '*' component = {PageNotFound} />
           </Switch>
-          <Route path={`/${this.state.currentType}/:color`} render={({ match }) => {
-              return <ShowColor color={match.params.color} type={this.state.currentType}/>
-          }} />
         </header>
       </div>
     )

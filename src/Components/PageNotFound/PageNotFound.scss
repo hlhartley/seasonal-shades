@@ -1,0 +1,19 @@
+.pagenotfound-container {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .pagenotfound-text {
+        font-size: 20px;
+    }
+    b {
+        font-size: 20px;
+    }
+}
+
+
+.fa-exclamation-triangle {
+    font-size: 40px;
+    color: #db7a74;
+}
