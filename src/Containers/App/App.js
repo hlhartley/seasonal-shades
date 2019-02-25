@@ -46,7 +46,7 @@ export class App extends Component {
         <header className="App-header">
           <Header />
           <Navigation updateCurrentType={this.updateCurrentType} />
-          <Banner />
+          <Banner type={this.state.currentType}/>
           <div className='hexcode-search'>
             <form onSubmit={this.hexCodeInput}>
                 <input type="text" onChange={this.handleChange} placeholder='# + 6-digit hexcode'></input>
@@ -88,7 +88,7 @@ App.propTypes = {
   blushColors: PropTypes.array,
   eyeshadowColors: PropTypes.array,
   allColors: PropTypes.object,
-  fetchMakeup: PropTypes.func.isRequired,
+  // fetchMakeup: PropTypes.func.isRequired,
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
