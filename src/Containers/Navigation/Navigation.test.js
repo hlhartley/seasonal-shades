@@ -12,7 +12,7 @@ describe('Navigation', () => {
         beforeEach(() => {
             let mockUpdateCurrentType = jest.fn()
             let mockFetchMakeup= jest.fn()
-            wrapper = shallow(<Navigation updateCurrentType={mockUpdateCurrentType} fetchMakeup={mockFetchMakeup}/>)
+            wrapper = shallow(<Navigation updateCurrentType={mockUpdateCurrentType} lipstickColors={[]} blushColors={undefined} eyeshadowColors={undefined} nail_polishColors={['Blue']} fetchMakeup={mockFetchMakeup}/>)
         });
 
         it('should match the snapshot with all the data passed in correctly', () => {

@@ -12,7 +12,9 @@ export class Navigation extends Component {
     handleClick = async (type) => {
         this.setState({activeLink: type})
         this.props.updateCurrentType(type)
-        await this.props.fetchMakeup(type)
+        if (!this.props[`${type}Colors`].length) {
+            await this.props.fetchMakeup(type)
+        }
     }
 
     render() {
@@ -27,6 +29,13 @@ export class Navigation extends Component {
     }
 }
 
+export const mapStateToProps = (state) => ({
+    nail_polishColors: state.nailpolishColors,
+    lipstickColors: state.lipstickColors,
+    blushColors: state.blushColors,
+    eyeshadowColors: state.eyeshadowColors,
+});
+
 export const mapDispatchToProps = (dispatch) => ({
     fetchMakeup: (path) => dispatch(fetchMakeup(path)),
 });
@@ -36,4 +45,4 @@ Navigation.propTypes = {
     updateCurrentType: PropTypes.func.isRequired,
 }
 
-export default connect(null, mapDispatchToProps)(Navigation)
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation)
