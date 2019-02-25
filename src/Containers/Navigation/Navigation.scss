@@ -1,5 +1,5 @@
 .navigation-container {
-    border-bottom: 15px solid #f1d8c8;
+    border-bottom: 15px solid $tan-color;
     display: flex;
     justify-content: space-around;
     
@@ -8,6 +8,7 @@
         font-size: 17px;
         letter-spacing: 2.5px;
     };
+
     a {
         display: flex;
         align-items: center;
@@ -16,11 +17,12 @@
         border-top-right-radius: 4px;
         height: 30px;
         margin-bottom: 0;
-        background-color: #e8e8e8;
+        background-color: $light-grey-color;
         width: 20vw;
-    }
+    };
+
     .is-active {
-        background-color: #f1d8c8;
-    }
+        background-color: $tan-color;
+    };
 };
 
