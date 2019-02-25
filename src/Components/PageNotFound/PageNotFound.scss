@@ -1,18 +1,20 @@
 .pagenotfound-container {
-    margin-top: 35px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin-top: 35px;
+
     .pagenotfound-text {
         font-size: 20px;
     }
+
     b {
         font-size: 20px;
     }
 }
 
 .fa-exclamation-triangle {
-    font-size: 40px;
     color: $grapefruit-color;
+    font-size: 40px;
 }
