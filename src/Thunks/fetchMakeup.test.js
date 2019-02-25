@@ -47,10 +47,10 @@ describe('fetchMakeup', () => {
         expect(mockDispatch).toHaveBeenCalledWith(setAllColors(allColors))
     });
 
-    it.skip('should dispatch setError with message is everything is not ok', async () => {
+    it('should dispatch setError with message is everything is not ok', async () => {
         const path = 'lipstick'
 
-        API() = jest.fn().mockImplementation(() => {
+        API.mockImplementation(() => {
             throw 'Error fetching data'
         });
         const thunk = fetchMakeup(path)

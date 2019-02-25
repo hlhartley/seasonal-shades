@@ -1,29 +1,12 @@
 import React from 'react';
 import Favorites, { mapStateToProps } from './Favorites';
 import { shallow } from 'enzyme';
+import { allColors, mockFavorites, mockState } from '../../__fixtures__/mockData';
 
 describe('Favorites', () => {
     let wrapper;
 
     describe('Favorites component', () => {
-        const allColors = {
-            522: {
-                product: {},
-                hexcode: '#EED8BE'
-            },
-            771: {
-                product: {},
-                hexcode: '#BD9E9B' 
-            },
-            'casablanca': {
-                product: {},
-                hexcode: '#444446'
-            }
-        }
-        const mockFavorites = {
-            '006infinity': true,
-            '002coralshape': true,
-        }
         beforeEach(() => {
             wrapper = shallow(<Favorites allColors={allColors} favorites={mockFavorites}/>)
         });
@@ -34,28 +17,6 @@ describe('Favorites', () => {
     });
 
     describe('mapStateToProps', () => {
-        const mockState = {
-            allColors: {
-                522: {
-                    product: {},
-                    hexcode: '#EED8BE'
-                },
-                771: {
-                    product: {},
-                    hexcode: '#BD9E9B' 
-                },
-                'casablanca': {
-                    product: {},
-                    hexcode: '#444446'
-                }
-            },
-            favorites: {
-                '006infinity': true,
-                '002coralshape': true,
-            },
-            blushColors: undefined,
-            eyeshadowColors: undefined,
-        };
         const expected = {
             allColors: {
                 522: {
@@ -72,8 +33,8 @@ describe('Favorites', () => {
                 }
             },
             favorites: {
-                '006infinity': true,
-                '002coralshape': true,
+                '001lune': true,
+                '001petal': true, 
             },
         };
         const mappedProps = mapStateToProps(mockState)

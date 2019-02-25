@@ -2,26 +2,13 @@ import React from 'react';
 import { App, mapDispatchToProps, mapStateToProps } from './App';
 import { shallow } from 'enzyme';
 import { fetchMakeup } from '../../Thunks/fetchMakeup';
+import { allColors, mockState } from '../../__fixtures__/mockData';
 
 jest.mock('../../Thunks/fetchMakeup')
 
 describe('App', () => { 
   let wrapper;
   beforeEach(() => {
-    const allColors = {
-      522: {
-        product: {},
-        hexcode: '#EED8BE'
-      },
-      771: {
-        product: {},
-        hexcode: '#BD9E9B' 
-      },
-      'casablanca': {
-        product: {},
-        hexcode: '#444446'
-      }
-    }
     wrapper = shallow(<App allColors={allColors} lipstickColors={[]} blushColors={undefined} eyeshadowColors={undefined} nail_polishColors={undefined} fetchMakeup={jest.fn()}/>)
   });
 
@@ -69,27 +56,6 @@ describe('App', () => {
 
   describe('mapStateToProps', () => {
     it('should should return an object with all colors, blushColors, eyeshadowColors, lipstickColors, and nail_polishColors', () => {
-      const mockState = {
-        allColors: {
-            522: {
-                product: {},
-                hexcode: '#EED8BE'
-            },
-            771: {
-                product: {},
-                hexcode: '#BD9E9B' 
-            },
-            'casablanca': {
-                product: {},
-                hexcode: '#444446'
-            }
-        },
-        blushColors: undefined,
-        eyeshadowColors: undefined,
-        lipstickColors: [],
-        nail_polishColors: undefined,
-        moreColors: undefined,
-    }
     const expected = {
         allColors: {
             522: {
