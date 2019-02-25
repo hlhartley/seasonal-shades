@@ -22,8 +22,8 @@ export class App extends Component {
     };
   };
 
-  componentDidMount() {
-    this.props.fetchMakeup('eyeshadow')
+  async componentDidMount() {
+    await this.props.fetchMakeup('eyeshadow')
   }
 
   handleChange = (e) => {
@@ -35,7 +35,7 @@ export class App extends Component {
   }
 
   render() {
-    let { currentType } = this.state
+    let { currentType, colorInputValue } = this.state
     return (
       <div className="App">
         <header className="App-header">
@@ -48,7 +48,7 @@ export class App extends Component {
               <Redirect to='/eyeshadow'/>
             </Route>
             <Route exact path='/favorites' render={()=> <Favorites type={currentType}/>}/>
-            <Route exact path={`/${currentType}`} render={()=> <ColorList type={currentType} colorInput={this.state.colorInputValue}/>}/>
+            <Route exact path={`/${currentType}`} render={()=> <ColorList type={currentType} colorInput={colorInputValue}/>}/>
             <Route path={`/${currentType}/:color`} render={({ match }) => {
                 return <ShowColor color={match.params.color} type={currentType}/>
             }} />
