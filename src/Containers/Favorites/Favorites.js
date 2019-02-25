@@ -5,14 +5,15 @@ import PropTypes from 'prop-types';
 
 export class Favorites extends Component {
     render() {
-        if(Object.keys(this.props.favorites).length) {
+        const { favorites, type } = this.props 
+        if(Object.keys(favorites).length) {
             return (
                 <div>
                 <h2 className='favorite-colors-text'>FAVORITE COLORS:</h2>
                 <div className='favorite-colors-container'>
-                {Object.keys(this.props.favorites).map((favoriteColor) => {
+                {Object.keys(favorites).map((favoriteColor) => {
                     return (
-                        <ColorCard color={favoriteColor} type={this.props.type}/>
+                        <ColorCard color={favoriteColor} type={type}/>
                         )
                     })
                 }
