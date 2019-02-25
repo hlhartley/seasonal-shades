@@ -6,16 +6,17 @@ import PropTypes from 'prop-types';
 
 class ShowColor extends Component {
     render() {
-        const type = this.props.type.toUpperCase()
-        if(this.props.allColors) {
+        const { allColors, color, type } = this.props
+        const uppercaseType = type.toUpperCase()
+        if(allColors) {
             return(
                 <div className='color-info-card'>
-                    <h2 className='color-info-card-title'>{`${type}`}</h2>
+                    <h2 className='color-info-card-title'>{`${uppercaseType}`}</h2>
                     
-                    <ColorCard color={this.props.color} type={this.props.type}/>
+                    <ColorCard color={color} type={type}/>
                     
                     <div className='product-info-card'>
-                        <ProductCard color={this.props.color}/>
+                        <ProductCard color={color}/>
                     </div>
                 </div>
             )

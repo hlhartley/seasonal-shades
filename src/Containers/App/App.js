@@ -41,12 +41,13 @@ export class App extends Component {
   // }
 
   render() {
+    let { currentType } = this.state
     return (
       <div className="App">
         <header className="App-header">
           <Header />
           <Navigation updateCurrentType={this.updateCurrentType} />
-          <Banner type={this.state.currentType}/>
+          <Banner type={currentType}/>
           <div className='hexcode-search'>
             <form onSubmit={this.hexCodeInput}>
                 <input type="text" onChange={this.handleChange} placeholder='# + 6-digit hexcode'></input>
@@ -57,10 +58,10 @@ export class App extends Component {
             <Route exact path='/'>
               <Redirect to='/eyeshadow'/>
             </Route>
-            <Route exact path='/favorites' render={()=> <Favorites type={this.state.currentType}/>}/>
-            <Route exact path={`/${this.state.currentType}`} render={()=> <ColorList type={this.state.currentType}/>}/>
-            <Route path={`/${this.state.currentType}/:color`} render={({ match }) => {
-                return <ShowColor color={match.params.color} type={this.state.currentType}/>
+            <Route exact path='/favorites' render={()=> <Favorites type={currentType}/>}/>
+            <Route exact path={`/${currentType}`} render={()=> <ColorList type={currentType}/>}/>
+            <Route path={`/${currentType}/:color`} render={({ match }) => {
+                return <ShowColor color={match.params.color} type={currentType}/>
             }} />
             <Route path = '*' component = {PageNotFound} />
           </Switch>
@@ -88,7 +89,7 @@ App.propTypes = {
   blushColors: PropTypes.array,
   eyeshadowColors: PropTypes.array,
   allColors: PropTypes.object,
-  // fetchMakeup: PropTypes.func.isRequired,
+  fetchMakeup: PropTypes.func,
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
