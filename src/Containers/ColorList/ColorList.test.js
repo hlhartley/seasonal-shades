@@ -29,7 +29,7 @@ describe('ColorList', () => {
     });
 
     describe('mapStateToProps', () => {
-        it('should return an object with all colors', () => {
+        it('should return an object with all colors, blushColors, eyeshadowColors, lipstickColors, and nail_polishColors', () => {
             const mockState = {
                 allColors: {
                     522: {
