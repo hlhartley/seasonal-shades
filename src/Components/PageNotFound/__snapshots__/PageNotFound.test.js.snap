@@ -5,7 +5,7 @@ exports[`PageNotFound Component should have a snapshot with the data passed in c
   className="pagenotfound-container"
 >
   <i
-    class="fas fa-exclamation-triangle"
+    className="fas fa-exclamation-triangle"
   />
   <p
     className="pagenotfound-text"

@@ -1,10 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { App, mapDispatchToProps, mapStateToProps } from './App';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import { createStore } from 'redux';
-import rootReducer from '../../reducers';
 import { shallow } from 'enzyme';
 import { fetchMakeup } from '../../Thunks/fetchMakeup';
 
@@ -27,14 +22,7 @@ describe('App', () => {
         hexcode: '#444446'
       }
     }
-    wrapper = shallow(<App allColors={allColors} lipstickColors={[]} blushColors={undefined} eyeshadowColors={undefined} nail_polishColors={undefined}/>)
-  });
-  
-  it.skip('renders without crashing', () => {
-    const div = document.createElement('div');
-    const store = createStore(rootReducer)
-    ReactDOM.render(<Provider store={store}><BrowserRouter><App /></BrowserRouter></Provider>, div);
-    ReactDOM.unmountComponentAtNode(div);
+    wrapper = shallow(<App allColors={allColors} lipstickColors={[]} blushColors={undefined} eyeshadowColors={undefined} nail_polishColors={undefined} fetchMakeup={jest.fn()}/>)
   });
 
   describe('App Component', () => {
@@ -51,13 +39,6 @@ describe('App', () => {
         currentType: 'eyeshadow',
         inputValue: '',
       });
-    });
-
-    it('should render the Header, Navigation, Banner, and ColorList components', () => {
-      expect(wrapper.find('Header').length).toEqual(1)
-      expect(wrapper.find('Banner').length).toEqual(1)
-      expect(wrapper.find('Navigation').length).toEqual(1)
-      expect(wrapper.find('ColorList').length).toEqual(1)
     });
 
     it('handleChange should setState with the correct input value', () => {

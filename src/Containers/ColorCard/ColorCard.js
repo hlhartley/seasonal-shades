@@ -38,7 +38,7 @@ export const mapDispatchToProps = (dispatch) => ({
 ColorCard.propTypes = {
     allColors: PropTypes.object,
     favorites: PropTypes.object,
-    toggleFavorite: PropTypes.func.isRequired,
+    toggleFavorite: PropTypes.func,
     color: PropTypes.string,
     type: PropTypes.string,
 }

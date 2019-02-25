@@ -5,8 +5,9 @@ exports[`Banner component should match the snapshot with all data passed in corr
   className="banner-container"
 >
   <img
+    alt="colors banner"
     className="banner-img"
-    src="blush.jpg"
+    src="lipstick.jpg"
   />
 </div>
 `;
