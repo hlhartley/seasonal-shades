@@ -1,41 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header component should match the snapshot with all the data passed in correctly 1`] = `
-<div
-  className="header-container"
->
-  <h1
-    className="title"
-  >
-    Seasonal Shades
-  </h1>
-  <div
-    className="user-info"
-  >
-    <p>
-      Welcome, User!
-    </p>
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      to="/favorites"
-    >
-      <i
-        className="fas fa-heart"
-        data-for="tooltip"
-        data-tip={true}
-      />
-    </NavLink>
-    <ReactTooltip
-      effect="solid"
-      id="tooltip"
-      insecure={true}
-      resizeHide={true}
-      type="dark"
-      wrapper="div"
-    >
-      View favorites
-    </ReactTooltip>
-  </div>
-</div>
+exports[`Header Header component should match the snapshot with all the data passed in correctly 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
