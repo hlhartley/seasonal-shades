@@ -22,7 +22,7 @@ class ShowColor extends Component {
             )
         } else {
             return(
-                'loading color...'
+                <p><i className="far fa-clock"></i> Loading color ...</p>
             )
         }
     }
