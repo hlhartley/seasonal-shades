@@ -19,6 +19,12 @@ describe('Navigation', () => {
             expect(wrapper).toMatchSnapshot()
         });
 
+        it('should have a proper default state', () => {
+            expect(wrapper.state()).toEqual({
+                activeLink: 'eyeshadow',
+            });
+        });
+
         it('handleClick should setState with the activeLink, call updateCurrentType, and call fetchMakeup', async () => {
             wrapper.instance().handleClick('lipstick')
             expect(wrapper.instance().state.activeLink).toEqual('lipstick')
