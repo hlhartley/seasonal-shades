@@ -9,3 +9,20 @@
     justify-content: center;
     align-items: center;
 }
+
+.no-favorites-container {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-favorites-text {
+    font-size: 20px;
+}
+
+.fa-heart-broken {
+    font-size: 40px;
+    color: #db7a74;
+}

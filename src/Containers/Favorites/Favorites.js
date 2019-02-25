@@ -20,8 +20,9 @@ class Favorites extends Component {
             )
         } else {
             return(
-                <div>
-                    No Favorites
+                <div className='no-favorites-container'>
+                    <i class="fas fa-heart-broken"></i>
+                    <p className='no-favorites-text'>No favorites found ...</p>
                 </div>
             )
         }
