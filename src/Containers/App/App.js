@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import '../../../src/main.scss';
 import Header from '../../Components/Header/Header';
 import Navigation from '../Navigation/Navigation';
 import Banner from '../../Components/Banner/Banner';
 import ColorList from '../ColorList/ColorList';
-import { connect } from 'react-redux';
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import Favorites from '../../Containers/Favorites/Favorites';
 import ShowColor from '../ShowColor/ShowColor';
-import { fetchMakeup } from '../../Thunks/fetchMakeup';
 import PageNotFound from '../../Components/PageNotFound/PageNotFound';
-import PropTypes from 'prop-types'
+import Search from '../../Components/Search/Search';
+import { fetchMakeup } from '../../Thunks/fetchMakeup';
 
 export class App extends Component {
   constructor() {
@@ -41,10 +42,7 @@ export class App extends Component {
           <Header />
           <Navigation updateCurrentType={this.updateCurrentType} />
           <Banner type={currentType}/>
-          <div className='color-search'>
-            <i className="fas fa-search"></i>
-            <input type="text" onChange={this.handleChange} placeholder='Search by color name' className='search-input'></input>
-          </div>
+          <Search handleChange={this.handleChange}/>
           <Switch>
             <Route exact path='/'>
               <Redirect to='/eyeshadow'/>
