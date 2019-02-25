@@ -22,7 +22,7 @@ export class Favorites extends Component {
         } else {
             return(
                 <div className='no-favorites-container'>
-                    <i class="fas fa-heart-broken"></i>
+                    <i className="fas fa-heart-broken"></i>
                     <p className='no-favorites-text'>No favorites found ...</p>
                 </div>
             )
