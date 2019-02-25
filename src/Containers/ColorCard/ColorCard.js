@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { formatColorName } from '../../Helpers/colorsHelper';
 import { toggleFavorite } from '../../Actions';
+import PropTypes from 'prop-types';
 
 export class ColorCard extends Component {
     constructor() {
@@ -32,10 +33,18 @@ export class ColorCard extends Component {
 export const mapStateToProps = (state) => ({
     allColors: state.allColors,
     favorites: state.favorites,
-})
+});
 
 export const mapDispatchToProps = (dispatch) => ({
     toggleFavorite: (color) => dispatch(toggleFavorite(color))
-})
+});
+
+ColorCard.propTypes = {
+    allColors: PropTypes.object,
+    favorites: PropTypes.object,
+    toggleFavorite: PropTypes.func.isRequired,
+    color: PropTypes.string,
+    type: PropTypes.string,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ColorCard);

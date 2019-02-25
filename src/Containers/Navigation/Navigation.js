@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMakeup } from '../../Thunks/fetchMakeup';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class Navigation extends Component {
     state = {
@@ -29,5 +30,10 @@ export class Navigation extends Component {
 export const mapDispatchToProps = (dispatch) => ({
     fetchMakeup: (path) => dispatch(fetchMakeup(path)),
 });
+
+Navigation.propTypes = {
+    fetchMakeup: PropTypes.func.isRequired,
+    updateCurrentType: PropTypes.func.isRequired,
+}
 
 export default connect(null, mapDispatchToProps)(Navigation)
