@@ -24,7 +24,7 @@ describe('App', () => {
     it('should have a proper default state', () => {
       expect(wrapper.state()).toEqual({
         currentType: 'eyeshadow',
-        inputValue: '',
+        colorInputValue: '',
       });
     });
 
@@ -38,16 +38,16 @@ describe('App', () => {
       }
       const expected = {
         currentType: 'eyeshadow',
-        inputValue: 'some input',
+        colorInputValue: 'some input',
       }
       wrapper.instance().handleChange(mockEvent('some input'))
-      expect(expected.inputValue).toEqual('some input')
+      expect(expected.colorInputValue).toEqual('some input')
     });
 
     it('updateCurrentType should setState with the correct type', () => {
       const expected = {
         currentType: 'blush',
-        inputValue: '',
+        colorInputValue: '',
       }
       wrapper.instance().updateCurrentType('blush')
       expect(expected.currentType).toEqual('blush')
