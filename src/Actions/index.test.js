@@ -51,6 +51,16 @@ describe('actions', () => {
         expect(result).toEqual(expectedAction);
     });
 
+    it('should have a type of TOGGLE_FAVORITE', () => {
+        const colorName = 'Purple'
+        const expectedAction = {
+            type: 'TOGGLE_FAVORITE',
+            colorName,
+        }
+        const result = actions.toggleFavorite(colorName)
+        expect(result).toEqual(expectedAction);
+    });
+
     it('should have a type of SET_LOADING', () => {
         const bool = false;
         const expectedAction = {

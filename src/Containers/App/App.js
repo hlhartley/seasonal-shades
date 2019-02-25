@@ -21,9 +21,9 @@ export class App extends Component {
     };
   };
 
-  componentDidMount() {
-    this.props.fetchMakeup('eyeshadow')
-  }
+  // componentDidMount() {
+  //   this.props.fetchMakeup('eyeshadow')
+  // }
 
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value })
@@ -39,11 +39,6 @@ export class App extends Component {
   //   const color = this.props.allColors[hexCode];
   //     console.log(color)
   // }
-
-  findColor = () => {
-    const colorInput = this.state.inputValue;
-
-  }
 
   render() {
     return (

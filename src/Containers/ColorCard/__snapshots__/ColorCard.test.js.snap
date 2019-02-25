@@ -17,6 +17,7 @@ exports[`ColorCard ColorCard component should match the correct snapshot with al
   >
     <i
       className="far fa-heart"
+      onClick={[Function]}
     />
     <p
       className="color-hexcode-text"

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageNotFound Component should have a snapshot with the data passed in corectly 1`] = `
+<div
+  className="pagenotfound-container"
+>
+  <i
+    class="fas fa-exclamation-triangle"
+  />
+  <p
+    className="pagenotfound-text"
+  >
+    <b>
+      404:
+    </b>
+     Page not found
+  </p>
+</div>
+`;

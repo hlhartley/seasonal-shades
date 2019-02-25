@@ -19,8 +19,12 @@ describe('ColorCard', () => {
                 hexcode: '#444446'
             }
         }
+        const mockFavorites = {
+            '001lune': true,
+            '001petal': true,
+        }
         beforeEach(() => {
-            wrapper = shallow(<ColorCard color={'casablanca'} type={'lipstick'} allColors={allColors} lipstickColors={[]} blushColors={undefined} eyeshadowColors={undefined} nail_polishColors={undefined}/>)
+            wrapper = shallow(<ColorCard color={'casablanca'} type={'lipstick'} allColors={allColors} lipstickColors={[]} blushColors={undefined} eyeshadowColors={undefined} nail_polishColors={undefined} favorites={mockFavorites}/>)
         });
 
         it('should match the correct snapshot with all the data passed in', () => {
@@ -29,7 +33,7 @@ describe('ColorCard', () => {
     });
 
     describe('mapStateToProps', () => {
-        it('should return an object with all colors, blushColors, eyeshadowColors, lipstickColors, and nail_polishColors', () => {
+        it('should return an object with all colors and an object of favorites', () => {
             const mockState = {
                 allColors: {
                     522: {
@@ -44,6 +48,10 @@ describe('ColorCard', () => {
                         product: {},
                         hexcode: '#444446'
                     }
+                },
+                favorites: {
+                    '001lune': true,
+                    '001petal': true,
                 },
                 eyeshadowColors: [],
             }
@@ -62,6 +70,10 @@ describe('ColorCard', () => {
                         hexcode: '#444446'
                     },
                 },
+                favorites: {
+                    '001lune': true,
+                    '001petal': true,
+                }
             }
             const mappedProps = mapStateToProps(mockState)
             expect(mappedProps).toEqual(expected)
