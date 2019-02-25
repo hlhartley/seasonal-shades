@@ -42,7 +42,7 @@ export class App extends Component {
           <Header />
           <Navigation updateCurrentType={this.updateCurrentType} />
           <Banner type={currentType}/>
-          <Search handleChange={this.handleChange}/>
+          <Search handleChange={this.handleChange} type={currentType}/>
           <Switch>
             <Route exact path='/'>
               <Redirect to='/eyeshadow'/>
