@@ -4,13 +4,13 @@ import Header from '../../Components/Header/Header';
 import Navigation from '../Navigation/Navigation';
 import Banner from '../../Components/Banner/Banner';
 import ColorList from '../ColorList/ColorList';
-import { setError } from '../../Actions';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import Favorites from '../../Containers/Favorites/Favorites';
 import ShowColor from '../ShowColor/ShowColor';
 import { fetchMakeup } from '../../Thunks/fetchMakeup';
 import PageNotFound from '../../Components/PageNotFound/PageNotFound';
+import PropTypes from 'prop-types'
 
 export class App extends Component {
   constructor() {
@@ -81,5 +81,14 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   fetchMakeup: (path) => dispatch(fetchMakeup(path))
 });
+
+App.propTypes = {
+  nail_polishColors: PropTypes.array,
+  lipstickColors: PropTypes.array,
+  blushColors: PropTypes.array,
+  eyeshadowColors: PropTypes.array,
+  allColors: PropTypes.object,
+  fetchMakeup: PropTypes.func.isRequired,
+}
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

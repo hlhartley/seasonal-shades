@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ColorCard from '../ColorCard/ColorCard';
+import PropTypes from 'prop-types';
 
 export class ColorList extends Component {
     render() {
@@ -29,6 +30,15 @@ export const mapStateToProps = (state) => ({
     blushColors: state.blushColors,
     eyeshadowColors: state.eyeshadowColors,
     nail_polishColors: state.nailpolishColors,
-})
+});
+
+ColorList.propTypes = {
+    allColors: PropTypes.object,
+    lipstickColors: PropTypes.array,
+    blushColors: PropTypes.array,
+    eyeshadowColors: PropTypes.array,
+    nail_polishColors: PropTypes.array,
+    type: PropTypes.string,
+}
 
 export default connect(mapStateToProps)(ColorList);

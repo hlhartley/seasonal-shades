@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ColorCard from '../ColorCard/ColorCard';
+import PropTypes from 'prop-types';
 
 export class Favorites extends Component {
     render() {
@@ -29,10 +30,14 @@ export class Favorites extends Component {
     }
 }
 
-
 export const mapStateToProps = (state) => ({
     allColors: state.allColors,
     favorites: state.favorites,
 });
+
+Favorites.propTypes = {
+    allColors: PropTypes.object,
+    favorites: PropTypes.object,
+};
 
 export default connect(mapStateToProps)(Favorites);

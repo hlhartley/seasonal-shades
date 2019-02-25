@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ColorCard from '../../Containers/ColorCard/ColorCard';
 import { connect } from 'react-redux';
 import ProductCard from '../ProductCard/ProductCard';
+import PropTypes from 'prop-types';
 
 class ShowColor extends Component {
     constructor() {
@@ -35,5 +36,14 @@ export const mapStateToProps = (state) => ({
     allColors: state.allColors,
 });
 
+ShowColor.propTypes = {
+    nail_polishColors: PropTypes.array,
+    lipstickColors: PropTypes.array,
+    blushColors: PropTypes.array,
+    eyeshadowColors: PropTypes.array,
+    allColors: PropTypes.object,
+    color: PropTypes.string,
+    type: PropTypes.string,
+};
 
 export default connect(mapStateToProps)(ShowColor);
