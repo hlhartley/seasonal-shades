@@ -7,14 +7,15 @@ import PropTypes from 'prop-types';
 
 export class ColorCard extends Component {
     render() {
-        const formattedColor = formatColorName(this.props.color);
-        const { hexcode } = this.props.allColors[formattedColor];
-        if (Object.keys(this.props.allColors).length) {
+        const { allColors, color, type, favorites, toggleFavorite } = this.props
+        const formattedColor = formatColorName(color);
+        const { hexcode } = allColors[formattedColor];
+        if (Object.keys(allColors).length) {
             return(
-                <NavLink to={`/${this.props.type}/${formattedColor}`} className='color-link'>
+                <NavLink to={`/${type}/${formattedColor}`} className='color-link'>
                     <div className='color' style={{ backgroundColor: hexcode }}>
-                        <i className={this.props.favorites[formattedColor] ? "fas fa-heart" : "far fa-heart"} onClick={() => this.props.toggleFavorite(formattedColor)}></i>
-                        <p className='color-hexcode-text'>{this.props.color}</p>
+                        <i className={favorites[formattedColor] ? "fas fa-heart" : "far fa-heart"} onClick={() => toggleFavorite(formattedColor)}></i>
+                        <p className='color-hexcode-text'>{color}</p>
                     </div>
                 </NavLink>
             )
