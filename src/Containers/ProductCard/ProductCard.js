@@ -5,21 +5,22 @@ import PropTypes from 'prop-types';
 
 export class ProductCard extends Component {
     render() {
+        const { allColors, color } = this.props
         return(
             <div>
                 <div className='product-card-container'>
                     <h2>MATCHING PRODUCT:</h2> 
-                    <h2>{this.props.allColors[this.props.color].product.name}</h2>
-                    <p>{this.props.allColors[this.props.color].product.description}</p>
+                    <h2>{allColors[color].product.name}</h2>
+                    <p>{allColors[color].product.description}</p>
                 </div>
                 <div className='product-info'>
                     <div>
-                        <img src={`${this.props.allColors[this.props.color].product.image_link}`} className='product-image' alt='matching product'/>
+                        <img src={`${allColors[color].product.image_link}`} className='product-image' alt='matching product'/>
                     </div>
                     <div className='product-info-text'>
-                        <p><b>Brand:</b> {this.props.allColors[this.props.color].product.brand}</p>
-                        <p><b>Price:</b> ${this.props.allColors[this.props.color].product.price}</p>
-                        <p><b>Website:</b> {this.props.allColors[this.props.color].product.website_link}</p>
+                        <p><b>Brand:</b> {allColors[color].product.brand}</p>
+                        <p><b>Price:</b> ${allColors[color].product.price}</p>
+                        <p><b>Website:</b> {allColors[color].product.website_link}</p>
                     </div>
                 </div>
             </div>
