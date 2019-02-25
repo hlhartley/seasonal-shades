@@ -16,7 +16,7 @@ export class ColorCard extends Component {
             return(
                 // <NavLink to={`/${this.props.type}/${formattedColor}`} className='color-link'>
                     <div className='color' style={{ backgroundColor: hexcode }}>
-                        <i className="far fa-heart" onClick={() => this.props.toggleFavorite(formattedColor)}></i>
+                        <i className={this.props.favorites[formattedColor] ? "fas fa-heart" : "far fa-heart"} onClick={() => this.props.toggleFavorite(formattedColor)}></i>
                         <p className='color-hexcode-text'>{this.props.color}</p>
                     </div>
                 // </NavLink>
@@ -31,6 +31,7 @@ export class ColorCard extends Component {
 
 export const mapStateToProps = (state) => ({
     allColors: state.allColors,
+    favorites: state.favorites,
 })
 
 export const mapDispatchToProps = (dispatch) => ({
