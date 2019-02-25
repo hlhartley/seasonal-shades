@@ -5,11 +5,22 @@ import PropTypes from 'prop-types';
 
 export class ColorList extends Component {
     render() {
-        const { type } = this.props
+        const { type, colorInput } = this.props
         const productType = type+'Colors';
         const productColors = this.props[productType];
-
-        if (productColors && productColors.length) {
+        if (colorInput) {
+            return (
+                <div className='filtered-color-container'>
+                    {productColors.filter((color) => {
+                        return color.toLowerCase().includes(colorInput)
+                    }).map((color) => {
+                        return (
+                            <ColorCard color={color} type={type}/>
+                        )
+                    })}
+                </div>
+            )
+        } else if (productColors && productColors.length) {
             return (
                 <div className='color-container'>
                     {productColors.map((color) => {
@@ -40,6 +51,7 @@ ColorList.propTypes = {
     eyeshadowColors: PropTypes.array,
     nail_polishColors: PropTypes.array,
     type: PropTypes.string,
+    colorInput: PropTypes.string,
 }
 
 export default connect(mapStateToProps)(ColorList);
