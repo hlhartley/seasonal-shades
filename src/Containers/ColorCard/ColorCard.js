@@ -21,7 +21,7 @@ export class ColorCard extends Component {
             )
         } else {
             return (
-                <p>Loading all colors...</p>
+                <p><i className="far fa-clock"></i> Loading color ...</p>
             )
         }
     };
