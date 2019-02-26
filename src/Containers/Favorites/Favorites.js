@@ -4,34 +4,47 @@ import ColorCard from '../ColorCard/ColorCard';
 import PropTypes from 'prop-types';
 
 export class Favorites extends Component {
+    savedFavorites() {
+        const saved = localStorage.getItem('favorites');
+        if (saved) {
+            return Object.keys(JSON.parse(saved));
+        } else {
+            return [];
+        }
+    }
+
     render() {
-        const { favorites, type } = this.props 
-        if (Object.keys(JSON.parse(localStorage.getItem('favorites'))).length) {
+        const { favorites, type } = this.props;
+        const savedFavorites = this.savedFavorites();
+        debugger
+
+        if (savedFavorites.length) {
             return (
                 <div>
                 <h2 className='favorite-colors-text'>FAVORITE COLORS:</h2>
                 <div className='favorite-colors-container'>
-                {Object.keys(JSON.parse(localStorage.getItem('favorites'))).map((favoriteColor) => {
-                    return (
-                        <ColorCard color={favoriteColor} type={type}/>
-                        )
+                {
+                    savedFavorites.map((favoriteColor) => {
+                        return (
+                            <ColorCard color={favoriteColor} type={type}/>
+                            )
                     })
                 }
                 </div>
                 </div>
             )
-            } else if (favorites.length) {
+        } else if (Object.keys(favorites).length) {
             return (
                 <div>
-                <h2 className='favorite-colors-text'>FAVORITE COLORS:</h2>
-                <div className='favorite-colors-container'>
-                {Object.keys(this.props.favorites).map((favoriteColor) => {
-                    return (
-                        <ColorCard color={favoriteColor} type={type}/>
-                        )
-                    })
-                }
-                </div>
+                    <h2 className='favorite-colors-text'>FAVORITE COLORS:</h2>
+                    <div className='favorite-colors-container'>
+                        {Object.keys(this.props.favorites).map((favoriteColor) => {
+                            return (
+                                <ColorCard color={favoriteColor} type={type}/>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             )
         } else {
