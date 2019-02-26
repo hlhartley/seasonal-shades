@@ -3,13 +3,13 @@ export const favoritesReducer = (state = {}, action) => {
         case 'TOGGLE_FAVORITE':
             if(state[action.colorName]) {
                 // state[action.colorName] = false
-                localStorage.removeItem('favorites')
                 // if want to delete from an object:
                 delete state[action.colorName]
+                localStorage.removeItem('favorites')
             } else {
                 state[action.colorName] = true
+                localStorage.setItem('favorites', JSON.stringify({...state}))
             }
-            localStorage.setItem('favorites', JSON.stringify({...state}))
             return { ...state }
         default:
             return state
