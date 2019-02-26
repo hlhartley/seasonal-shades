@@ -33,7 +33,7 @@ export class ColorCard extends Component {
     }
 
     render() {
-        const { allColors, color, type, favorites, toggleFavorite } = this.props
+        const { allColors, color, type, toggleFavorite } = this.props
         const formattedColor = formatColorName(color);
         // const { hexcode } = allColors[formattedColor];
         const hexcode = this.getHexCode(formattedColor);
