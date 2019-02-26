@@ -10,7 +10,7 @@ const Header = (props) => {
         <div className='header-container'>
             <h1 className='title'>Seasonal Shades</h1>
             <div className='user-info'>
-                <p><b># Favorites:</b> <u>{Object.keys(props.favorites).length}</u></p>
+                <p><b># Favorites:</b> <u>{Object.keys(JSON.parse(localStorage.getItem('favorites'))).length}</u></p>
                 <NavLink to='/favorites'>
                     <i 
                         data-tip

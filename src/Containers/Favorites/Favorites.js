@@ -6,12 +6,13 @@ import PropTypes from 'prop-types';
 export class Favorites extends Component {
     render() {
         const { favorites, type } = this.props 
-        if(Object.keys(favorites).length) {
+        console.log(Object.keys(JSON.parse(localStorage.getItem('favorites'))))
+        if(Object.keys(JSON.parse(localStorage.getItem('favorites'))).length) {
             return (
                 <div>
                 <h2 className='favorite-colors-text'>FAVORITE COLORS:</h2>
                 <div className='favorite-colors-container'>
-                {Object.keys(favorites).map((favoriteColor) => {
+                {Object.keys(JSON.parse(localStorage.getItem('favorites'))).map((favoriteColor) => {
                     return (
                         <ColorCard color={favoriteColor} type={type}/>
                         )
