@@ -4,10 +4,10 @@ import ColorCard from '../ColorCard/ColorCard';
 import PropTypes from 'prop-types';
 
 export class Favorites extends Component {
-    savedFavorites() {
+    savedFavorites = () => {
         const saved = localStorage.getItem('favorites');
         if (saved) {
-            return Object.keys(JSON.parse(saved));
+            return Object.entries(JSON.parse(saved));
         } else {
             return [];
         }
@@ -16,8 +16,7 @@ export class Favorites extends Component {
     render() {
         const { favorites, type } = this.props;
         const savedFavorites = this.savedFavorites();
-        debugger
-
+        
         if (savedFavorites.length) {
             return (
                 <div>
@@ -26,7 +25,7 @@ export class Favorites extends Component {
                 {
                     savedFavorites.map((favoriteColor) => {
                         return (
-                            <ColorCard color={favoriteColor} type={type}/>
+                            <ColorCard color={favoriteColor[0]} type={type} hexcode={favoriteColor[1]}/>
                             )
                     })
                 }

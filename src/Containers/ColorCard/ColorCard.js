@@ -24,11 +24,11 @@ export class ColorCard extends Component {
         const savedFavorites = localStorage.getItem('favorites');
 
         if (savedFavorites && JSON.parse(savedFavorites)[formattedColor]) {
-            return JSON.parse(savedFavorites)[formattedColor].hexcode;
+            return JSON.parse(savedFavorites)[formattedColor] || this.props.hexcode
         } else if (this.props.allColors[formattedColor]) {
             return this.props.allColors[formattedColor].hexcode;
         } else {
-            return "white";
+            return 'black';
         }
     }
 
