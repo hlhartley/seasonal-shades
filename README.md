@@ -37,5 +37,6 @@ Run `npm test` from the root directory
 ### Future Enhancements:
 - Add Login page for users
 - Add Favorites for Products, not just Colors 
+- Add media queries with icons to replace text in Nav Bar
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
