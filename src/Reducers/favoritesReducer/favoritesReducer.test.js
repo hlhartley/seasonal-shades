@@ -10,8 +10,11 @@ describe('favoritesReducer', () => {
 
     it('should set state with the object of the favorited item', () => {
         const initialState = {}
-        const color = 'Blue'
+        const color = {
+            colorName: 'blue',
+            hexcode: '#333333'
+        } 
         const result = favoritesReducer(initialState, actions.toggleFavorite(color))
-        expect(result).toEqual({ 'Blue': true })
+        expect(result).toEqual({'blue': '#333333'})
     });
 });

@@ -52,12 +52,12 @@ describe('actions', () => {
     });
 
     it('should have a type of TOGGLE_FAVORITE', () => {
-        const colorName = 'Purple'
+        const color = 'Purple'
         const expectedAction = {
             type: 'TOGGLE_FAVORITE',
-            colorName,
+            color,
         }
-        const result = actions.toggleFavorite(colorName)
+        const result = actions.toggleFavorite(color)
         expect(result).toEqual(expectedAction);
     });
 
