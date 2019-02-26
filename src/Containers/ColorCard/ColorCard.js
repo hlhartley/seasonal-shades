@@ -6,7 +6,6 @@ import { toggleFavorite } from '../../Actions';
 import PropTypes from 'prop-types';
 
 export class ColorCard extends Component {
-    
     favoriteIconClass(formattedColor) {
         const savedFavorites = localStorage.getItem('favorites');
         const { favorites } = this.props;
@@ -35,7 +34,6 @@ export class ColorCard extends Component {
     render() {
         const { allColors, color, type, toggleFavorite } = this.props
         const formattedColor = formatColorName(color);
-        // const { hexcode } = allColors[formattedColor];
         const hexcode = this.getHexCode(formattedColor);
 
         if (Object.keys(allColors).length) {
@@ -51,8 +49,7 @@ export class ColorCard extends Component {
                         </i>
                         <p className='color-hexcode-text'>{color}</p>
                     </div>
-                </NavLink>
-            )
+                </NavLink>)
         } else {
             return (
                 <p><i className="far fa-clock"></i> Loading color ...</p>

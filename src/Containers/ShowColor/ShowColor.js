@@ -8,13 +8,11 @@ class ShowColor extends Component {
     render() {
         const { allColors, color, type } = this.props
         const uppercaseType = type.toUpperCase()
-        if(allColors) {
+        if (allColors) {
             return(
                 <div className='color-info-card'>
                     <h2 className='color-info-card-title'>{`${uppercaseType}`}</h2>
-                    
                     <ColorCard color={color} type={type}/>
-                    
                     <div className='product-info-card'>
                         <ProductCard color={color}/>
                     </div>

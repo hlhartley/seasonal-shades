@@ -20,16 +20,16 @@ export class Favorites extends Component {
         if (savedFavorites.length) {
             return (
                 <div>
-                <h2 className='favorite-colors-text'>FAVORITE COLORS:</h2>
-                <div className='favorite-colors-container'>
-                {
-                    savedFavorites.map((favoriteColor) => {
-                        return (
-                            <ColorCard color={favoriteColor[0]} type={type} hexcode={favoriteColor[1]}/>
+                    <h2 className='favorite-colors-text'>FAVORITE COLORS:</h2>
+                    <div className='favorite-colors-container'>
+                    {
+                        savedFavorites.map((favoriteColor) => {
+                            return (
+                                <ColorCard color={favoriteColor[0]} type={type} hexcode={favoriteColor[1]}/>
                             )
-                    })
-                }
-                </div>
+                        })
+                    }
+                    </div>
                 </div>
             )
         } else if (Object.keys(favorites).length) {
