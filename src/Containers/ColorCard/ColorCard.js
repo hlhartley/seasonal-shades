@@ -27,7 +27,7 @@ export class ColorCard extends Component {
         } else if (this.props.allColors[formattedColor]) {
             return this.props.allColors[formattedColor].hexcode;
         } else {
-            return 'black';
+            return 'white';
         }
     }
 
@@ -38,18 +38,21 @@ export class ColorCard extends Component {
 
         if (Object.keys(allColors).length) {
             return(
-                <NavLink to={`/${type}/${formattedColor}`} className='color-link'>
-                    <div className='color' style={{ backgroundColor: hexcode }}>
-                        <i 
-                            className={this.favoriteIconClass(formattedColor)} 
-                            onClick={() => toggleFavorite({ 
-                                colorName: formattedColor,
-                                hexcode,    
-                            })}>
-                        </i>
-                        <p className='color-hexcode-text'>{color}</p>
-                    </div>
-                </NavLink>)
+                <div>
+                    <i 
+                        className={this.favoriteIconClass(formattedColor)} 
+                        onClick={() => toggleFavorite({ 
+                            colorName: formattedColor,
+                            hexcode,    
+                        })}>
+                    </i>
+                    <NavLink to={`/${type}/${formattedColor}`} className='color-link'>
+                        <div className='color' style={{ backgroundColor: hexcode }}>
+                            <p className='color-hexcode-text'>{color}</p>
+                        </div>
+                    </NavLink>
+                </div>
+            )
         } else {
             return (
                 <p><i className="far fa-clock"></i> Loading color ...</p>

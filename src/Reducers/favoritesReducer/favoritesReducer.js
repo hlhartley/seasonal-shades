@@ -1,17 +1,19 @@
-export const favoritesReducer = (state = {}, action) => {
+export const initialState = () => {
+    return JSON.parse(localStorage.getItem('favorites')) || {};
+}
+
+export const favoritesReducer = (state = initialState(), action) => {
     switch(action.type) {
         case 'TOGGLE_FAVORITE':
             const { colorName, hexcode } = action.color;
 
-            if(state[colorName]) {
-                // state[action.colorName] = false
-                // if want to delete from an object:
+            if (state[colorName]) {
                 delete state[colorName];
-                // localStorage.removeItem('favorites')
             } else {
                 state[colorName] = hexcode;
-                localStorage.setItem('favorites', JSON.stringify({...state}))
             }
+  
+            localStorage.setItem('favorites', JSON.stringify({...state}))
             return { ...state }
         default:
             return state
