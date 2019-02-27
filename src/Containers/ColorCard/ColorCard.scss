@@ -8,8 +8,15 @@
     justify-content: center;
 }
 
-.color-link:hover{
+.color:hover {
     -webkit-transform: scale(1.15);
     -ms-transform: scale(1.15);
     transform: scale(1.15);
+}
+
+.favorite-color-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -3px;
 }
