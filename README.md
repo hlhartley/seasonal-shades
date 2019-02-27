@@ -25,6 +25,9 @@ Run `npm test` from the root directory
 ### Final App (Product Info)
 ![Screenshot-product-info](ss-screenshot-productinfo.png)
 
+### Final App (Favorites Page)
+![Screenshot-favorites](ss-screenshot-favorites.png)
+
 ### Original Assignment: 
 [Binary Challenge](http://frontend.turing.io/projects/binary-challenge.html)  
 
