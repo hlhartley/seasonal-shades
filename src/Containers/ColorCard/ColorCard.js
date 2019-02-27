@@ -11,11 +11,11 @@ export class ColorCard extends Component {
         const { favorites } = this.props;
 
         if (savedFavorites && JSON.parse(savedFavorites)[formattedColor]) {
-            return "fas fa-heart";
+            return "fas fa-heart favorite-color-icon";
         } else if (favorites && favorites[formattedColor]) {
-            return "fas fa-heart";
+            return "fas fa-heart favorite-color-icon";
         } else {
-            return "far fa-heart";
+            return "far fa-heart favorite-color-icon";
         }
     }
 
