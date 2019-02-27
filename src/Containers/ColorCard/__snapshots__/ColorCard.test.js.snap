@@ -3,7 +3,7 @@
 exports[`ColorCard ColorCard component should match the correct snapshot with all the data passed in 1`] = `
 <div>
   <i
-    className="far fa-heart"
+    className="far fa-heart favorite-color-icon"
     onClick={[Function]}
   />
   <NavLink
