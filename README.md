@@ -20,7 +20,7 @@ Jest and Enzyme
 Run `npm test` from the root directory  
 
 ### Final App (Desktop)
-![Screenshot-desktop](ss-screenshot-desktop.png)
+![Screenshot-desktop](ss-screenshot-desktop2.png)
 
 ### Original Assignment: 
 [Binary Challenge](http://frontend.turing.io/projects/binary-challenge.html)  
