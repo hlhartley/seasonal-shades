@@ -34,6 +34,7 @@ export class ColorCard extends Component {
     render() {
         const { allColors, color, type, toggleFavorite } = this.props
         const formattedColor = formatColorName(color);
+        // encodeURI ln36 / decodeURI - in matchparams
         const hexcode = this.getHexCode(formattedColor);
 
         if (Object.keys(allColors).length) {

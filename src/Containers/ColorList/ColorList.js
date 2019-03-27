@@ -4,6 +4,10 @@ import ColorCard from '../ColorCard/ColorCard';
 import PropTypes from 'prop-types';
 
 export class ColorList extends Component {
+    // componentDidMount = async () => ({
+    //     await this.props.fetchMakeup('eyeshadow')
+    // })
+
     render() {
         const { type, colorInput } = this.props
         const productType = type+'Colors';
