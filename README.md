@@ -2,6 +2,9 @@
 
 My inspiration for creating Seasonal Shades was to give makeup lovers color ideas who want to find the perfect shade of lipstick, blush, eyeshadow, or nailpolish. Users can browse colors by category or type in a color to see the instant matches via a fuzzy search. When a user clicks on a color, they are routed to a separate page and can see products that match that color with info including: name, brand, price, and website link.
 
+### Deployed App:
+[Seasonal Shades](http://seasonal-shades.s3-website-us-west-2.amazonaws.com/eyeshadow)
+
 ### Set-Up Frontend:
 - Clone this repo
 - Run `npm install` from the root directory  
